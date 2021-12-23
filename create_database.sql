@@ -30,7 +30,7 @@ create table IF NOT EXISTS edits (
     editid int PRIMARY KEY NOT NULL AUTO_INCREMENT,
     text varchar(16384) NOT NULL,
     postid int,
-    FOREIGN KEY (postid) REFERENCES posts(postid)
+    FOREIGN KEY (postid) REFERENCES posts(postid) ON DELETE CASCADE
 );
 
 create table IF NOT EXISTS answers (
@@ -120,13 +120,13 @@ INSERT INTO answers(isgood,userid,postid,text) VALUES (0,3,3,"Lorem ipsum dolor 
 
 -- Follow
 
-INSERT INTO follow(userid,categoryid) VALUES (1,3);
-INSERT INTO follow(userid,categoryid) VALUES (1,4);
-INSERT INTO follow(userid,categoryid) VALUES (2,5);
-INSERT INTO follow(userid,categoryid) VALUES (2,15);
-INSERT INTO follow(userid,categoryid) VALUES (3,9);
-INSERT INTO follow VALUES (1,2,1);
-INSERT INTO follow VALUES (3,8,1);
-INSERT INTO follow VALUES (3,2,1);
-INSERT INTO follow VALUES (2,8,1);
-INSERT INTO follow VALUES (5,1,1);
+INSERT INTO follow(categoryid,userid) VALUES (3,1);
+INSERT INTO follow(categoryid,userid) VALUES (4,1);
+INSERT INTO follow(categoryid,userid) VALUES (5,2);
+INSERT INTO follow(categoryid,userid) VALUES (15,2);
+INSERT INTO follow(categoryid,userid) VALUES (9,3);
+INSERT INTO follow VALUES (2,1,1);
+INSERT INTO follow VALUES (8,3,1);
+INSERT INTO follow VALUES (2,3,1);
+INSERT INTO follow VALUES (8,2,1);
+INSERT INTO follow VALUES (1,5,1);
