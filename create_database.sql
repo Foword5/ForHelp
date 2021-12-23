@@ -106,4 +106,27 @@ INSERT INTO posts(title,categoryid,userid,text) VALUES("Le Desygn Pattern State 
 
 -- Edits
 
-INSERT INTO edits(text,)
+INSERT INTO edits(postid,text) VALUES (1,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean mattis justo nec ex posuere, eget rutrum tellus posuere. In lobortis. ");
+INSERT INTO edits(postid,text) VALUES (3,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean mattis justo nec ex posuere, eget rutrum tellus posuere. In lobortis. ");
+
+-- Answers
+
+INSERT INTO answers(isgood,userid,postid,text) VALUES (0,1,1,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin laoreet. ");
+INSERT INTO answers(isgood,userid,postid,text) VALUES (0,3,2,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin laoreet. ");
+INSERT INTO answers(isgood,userid,postid,text) VALUES (1,2,1,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin laoreet. ");
+INSERT INTO answers(isgood,userid,postid,text) VALUES (0,1,3,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin laoreet. ");
+INSERT INTO answers(isgood,userid,postid,text) VALUES (1,2,3,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin laoreet. ");
+INSERT INTO answers(isgood,userid,postid,text) VALUES (0,3,3,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin laoreet. ");
+
+-- Follow
+
+INSERT INTO follow(userid,categoryid) VALUES (1,3);
+INSERT INTO follow(userid,categoryid) VALUES (1,4);
+INSERT INTO follow(userid,categoryid) VALUES (2,5);
+INSERT INTO follow(userid,categoryid) VALUES (2,15);
+INSERT INTO follow(userid,categoryid) VALUES (3,9);
+INSERT INTO follow VALUES (1,2,1);
+INSERT INTO follow VALUES (3,8,1);
+INSERT INTO follow VALUES (3,2,1);
+INSERT INTO follow VALUES (2,8,1);
+INSERT INTO follow VALUES (5,1,1);
