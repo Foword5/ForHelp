@@ -7,11 +7,11 @@
     </head>
     <body>
 
-<?php
+        <?php
 
-echo "<br />";
+        echo "<br />";
 
-?>
+        ?>
 
     </body>
 </html>

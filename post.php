@@ -4,8 +4,8 @@
         if(isset($_GET["post"])){
             $postid=$_GET["post"];
 
-            require "../data/db_login.php";
-            require "../data/functions.php";
+            require "data/db_login.php";
+            require "data/functions.php";
 
             $connexion=mysqli_connect($host,$login,$mdp,$bdd)
             or die("connexion impossible");
@@ -29,6 +29,7 @@
     <head>
         <meta charset="UTF-8">
         <title>ForHelp - <?php echo $post["title"]; ?></title>
+        <link href="styles/style.css" rel="stylesheet"/>
     </head>
     <body>
         
