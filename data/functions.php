@@ -1,18 +1,18 @@
 <?php
 
-function getCategoryArbo($connexion,$id){
-    $string = "";
-    while($id){
-        $req="SELECT name,parent from categories where categoryid = " . $id;
-        $result = mysqli_query($connexion,$req);
+    function getCategoryArbo($connexion,$id){
+        $string = "";
+        for($i=0;$i<5 && ($id != NULL);$i++){
+            $req="SELECT name,parent from categories where categoryid = " . $id;
+            $result = mysqli_query($connexion,$req);
 
-        foreach($result as $ligne) $cat = $ligne;
-        $id = $cat["parent"];
+            foreach($result as $ligne) $cat = $ligne;
+            $id = $cat["parent"];
 
-        $string = " > " . $cat["name"] . $string;
+            $string = " > " . $cat["name"] . $string;
+        }
+
+        return substr($string,3);
     }
-
-    return substr($string,3);
-}
 
 ?>
