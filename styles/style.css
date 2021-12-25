@@ -2,4 +2,12 @@
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
+    width: 50%;
+    margin: 10px auto 0 auto;
+    padding: 15px;
+    background-color: white;
+}
+
+html {
+    background-color: #DDD;
 }
