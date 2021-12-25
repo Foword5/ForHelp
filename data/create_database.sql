@@ -74,10 +74,10 @@ ALTER TABLE follow AUTO_INCREMENT = 1;
 -- Categories
 INSERT INTO categories(name,description) VALUES ("Programmation","Tous les languages ou concept de programmation");
     INSERT INTO categories(parent,name,description) VALUES (1,"Web","Tous les languages de programmation web");
-        INSERT INTO categories(parent,name) VALUES (3,"HTML");
-        INSERT INTO categories(parent,name) VALUES (3,"CSS");
-        INSERT INTO categories(parent,name) VALUES (3,"JavaScript");
-        INSERT INTO categories(parent,name) VALUES (3,"PHP");
+        INSERT INTO categories(parent,name) VALUES (2,"HTML");
+        INSERT INTO categories(parent,name) VALUES (2,"CSS");
+        INSERT INTO categories(parent,name) VALUES (2,"JavaScript");
+        INSERT INTO categories(parent,name) VALUES (2,"PHP");
     INSERT INTO categories(parent,name,description) VALUES (1,"Objet","Tous les languages de programmation orienté objet");
         INSERT INTO categories(parent,name) VALUES (7,"C#");
         INSERT INTO categories(parent,name) VALUES (7,"Java");
