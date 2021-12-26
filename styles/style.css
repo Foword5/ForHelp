@@ -2,4 +2,30 @@
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
+    width: 50%;
+    margin: 10px auto 0 auto;
+    padding: 15px;
+    background-color: white;
+}
+
+html {
+    background-color: #DDD;
+}
+
+button {
+    border-radius: 5px;
+    height: 40px;
+    font-size: 15px;
+    background-color: #6667ab;
+    color: white;
+    border: 0;
+    transition: 200ms;
+    font-size: 20px;
+    padding: 0 10px 0 10px;
+}
+
+button:hover {
+    transform: scale(90%);
+    transition: 200ms;
+    cursor: pointer;
 }
