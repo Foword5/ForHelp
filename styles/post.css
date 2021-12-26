@@ -1,0 +1,54 @@
+#post {
+    border: 2px solid black;
+}
+
+#arbo {
+    border: 2px solid black;
+    margin: -2px;
+    padding: 5px;
+}
+
+h3 {
+    margin: 10px 15px 0 15px;
+    font-size: 30px;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+#post p{
+    margin: 10px;
+    border: 2px solid #999;
+    background-color: #DDD;
+    padding: 15px;
+    border-radius :4px;
+}
+
+#post_bot {
+    width: calc(100% - 20px);
+    margin: 10px;
+}
+
+#post_bot td {
+    font-size: 25px;
+}
+
+.table_right{
+    text-align: right;
+}
+
+.answer {
+    border: 2px solid black;
+    width: calc(100%-4px);
+    margin: 10px 0 0 0;
+    padding: 10px;
+}
+
+.check_img {
+    width: 30px;
+    vertical-align: top;
+}
+
+.answer_top {
+    font-size: 25px;
+    margin-bottom: 10px;
+}

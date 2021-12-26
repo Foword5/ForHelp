@@ -6,12 +6,16 @@
         <link href="styles/style.css" rel="stylesheet"/>
     </head>
     <body>
-
         <?php
+            if(isset($_GET["post"])){
+                require "data/db_login.php";
+                require "data/functions.php";
+    
+                $connexion=mysqli_connect($host,$login,$mdp,$bdd)
+                or die("connexion impossible");
 
-        echo "<br />";
-
+                echo "Vous voulez répondre au post : " . getPost($connexion,$_GET["post"])["title"] ;
+            }
         ?>
-
     </body>
 </html>
