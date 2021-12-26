@@ -24,6 +24,9 @@
         <link href="styles/post.css" rel="stylesheet"/>
     </head>
     <body>
+        <?php
+            include "navebar.php";
+        ?>
         <div id="post">
             <div id="arbo">
                 <?php echo getCategoryArbo($connexion,$post["categoryid"]); ?>
