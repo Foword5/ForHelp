@@ -9,18 +9,18 @@
 
             $connexion=mysqli_connect($host,$login,$mdp,$bdd)
             or die("connexion impossible");
-
+          
             $post = getPost($connexion,$postid);
             if (!$post) header("Location:unknow.html");
 
-            $autor = getUser($connexion,$post["userid"]);
-            
+            $autor = getUser($connexion,$post["userid"]);            
         }else header("Location:unknow.html"); 
     ?>
     <head>
         <meta charset="UTF-8">
         <title>ForHelp - <?php echo $post["title"]; ?></title>
         <link href="styles/style.css" rel="stylesheet"/>
+
         <link href="styles/post.css" rel="stylesheet"/>
     </head>
     <body>

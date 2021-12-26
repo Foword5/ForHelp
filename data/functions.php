@@ -2,6 +2,7 @@
 
     function getCategoryArbo($connexion,$id){
         $string = "";
+
         for($i=0;$i<10 && $id;$i++){
             $req="SELECT name,parent from categories where categoryid = ?";
 
@@ -14,7 +15,7 @@
             $id = $cat["parent"];
 
             $string = " > " . $cat["name"] . $string;
-
+          
             mysqli_stmt_close($stmt);
         }
 
