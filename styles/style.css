@@ -29,18 +29,3 @@ button:hover {
     transition: 200ms;
     cursor: pointer;
 }
-
-.nav-bouton {
-    margin-top: 3px;
-    margin: 3px;
-    width: 10%;
-    height: 4vh;
-    background-color: #dee980;
-    border-radius: 20px;
-    font-family: 'Montserrat', sans-serif;
-    cursor: pointer;
-}
-
-.bloc-recherche-post {
-    
-}
