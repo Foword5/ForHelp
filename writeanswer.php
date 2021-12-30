@@ -1,7 +1,3 @@
-<?php
-include 'data/functions.php';
-include 'bd_login';
-?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -26,10 +22,6 @@ include 'bd_login';
         <div class="box">
             <!-- chemin d'accès -->
             <a>chemin d'accès</a>
-            <?php/*
-            chemin = getCategoryArbo($connexion,$id)
-            echo "<a>"+ chemin +"</a>";
-            */?>
             <br />
             <!-- post d'origine -->
             <a style="border: thick double #000000">boite contenant le post d'origine</a>

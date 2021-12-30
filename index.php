@@ -1,6 +1,11 @@
 <?php
+include 'navbar.php';
 include 'data/functions.php';
-include 'bd_login';
+
+$login = "root";
+$mdp = "";
+$host = "localhost";
+$bdd="projet";
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -10,7 +15,6 @@ include 'bd_login';
         <link href="styles/style.css" rel="stylesheet"/>
     </head>
     <body>
-        <?php include 'navbar.php'; ?>
 
         <div class="bloc-recherche-post">
         <?php
