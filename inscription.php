@@ -6,11 +6,12 @@
         <link href="styles/style.css" rel="stylesheet"/>
     </head>
     <body>
-
+        <?php include 'navbar.php'; ?>
         <?php
 
         echo "<br />";
 
+        include "session_check.php";
         ?>
 
     </body>

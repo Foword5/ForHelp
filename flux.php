@@ -12,6 +12,7 @@
 
         echo "<br />";
 
+        include "session_check.php";
         ?>
 
     </body>
