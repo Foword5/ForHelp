@@ -16,7 +16,7 @@
         <a class="nav-bouton" href="flux.php" title="actualité">Fil d'actualité</a>
         <a class="nav-bouton" href="account.php" title="compte">Mon compte</a>
 
-        <a class="nav-bouton" href="connexion.php" title="connexion">connexion</a>
+        <a class="nav-bouton" href="connection.php" title="connection">connexion</a>
         <a class="nav-bouton" href="inscription.php" title="inscription">inscription</a>
     </nav>
     
