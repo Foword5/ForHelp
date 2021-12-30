@@ -11,7 +11,7 @@
     <nav style="background:#6667ab;">
         <a> bonjour ici c'est la place pour la barre de navigation </a><br />
         <a class="nav-bouton" href="index.php" title="recherche">Recherche</a>
-        <a class="nav-bouton" href="newpost.php" title="nouveaupost">Poser une question</a>
+        <a class="nav-bouton" href="writepost.php" title="nouveaupost">Poser une question</a>
 
         <a class="nav-bouton" href="flux.php" title="actualité">Fil d'actualité</a>
         <a class="nav-bouton" href="account.php" title="compte">Mon compte</a>

@@ -47,7 +47,6 @@
             <br />
             <form action="newanswer.php" method="POST" class="post-form">
                 <h4>réponse</h4>
-                <br />
                 <textarea class="proposition-textarea" name="description" required=""></textarea>
                 <br />
                 <button type="submit" class="proposition-bouton" name="submit">Poster</button>
