@@ -25,8 +25,8 @@
             <br />
             <!-- post d'origine -->
             <a style="border: thick double #000000">boite contenant le post d'origine</a>
-            <!--
-            <div id="post">
+            <?php
+            /*<div id="post">
                 <div id="arbo">
                 <?php echo getCategoryArbo($connexion,$post["categoryid"]); ?>
                 </div>
@@ -42,8 +42,8 @@
                         <td class="table_right"><a href="answer.php?post=<?php echo $postid;?>"><button>Écrire une réponse</button></a></td>
                     </tr>
                 </table>
-            </div>
-            -->
+            </div>*/
+            ?>
             <br />
             <form action="newanswer.php" method="POST" class="post-form">
                 <h4>réponse</h4>
