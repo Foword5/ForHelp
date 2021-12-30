@@ -1,3 +1,7 @@
+<?php
+include 'data/functions.php';
+include 'bd_login';
+?>
 <!DOCTYPE html>
 <html lang="fr">
     <?php
