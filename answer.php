@@ -19,16 +19,16 @@
             }
         ?>
 
-        
-        <form method="POST" action="newanswer.php" class="post-form">
+        <div class="box">
             <!-- chemin d'accès -->
-            <a></a>
+            <a>chemin d'accès</a>
             <br />
             <!-- post d'origine -->
+            <a style="border: thick double #000000">boite contenant le post d'origine</a>
             <!--
             <div id="post">
                 <div id="arbo">
-                    <?php echo getCategoryArbo($connexion,$post["categoryid"]); ?>
+                <?php echo getCategoryArbo($connexion,$post["categoryid"]); ?>
                 </div>
                 <h3>
                     <?php echo $post["title"] ?>
@@ -45,12 +45,13 @@
             </div>
             -->
             <br />
-            <label><b>réponse</b></label>
-            <br />
-            <textarea class="proposition-textarea" name="description" required=""></textarea>
-            <br />
-            <button type="submit" class="proposition-bouton" name="submit">Poster</button>
-        </form>
-
+            <form action="newanswer.php" method="POST" class="post-form">
+                <h4>réponse</h4>
+                <br />
+                <textarea class="proposition-textarea" name="description" required=""></textarea>
+                <br />
+                <button type="submit" class="proposition-bouton" name="submit">Poster</button>
+            </form>
+        </div>
     </body>
 </html>
