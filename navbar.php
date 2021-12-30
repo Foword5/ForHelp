@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <nav style="background:#6667ab;">
+    <nav style="background:#6667ab; text-align: center">
         <a class="nav-bouton" href="index.php" title="recherche">Recherche</a>
         <a class="nav-bouton" href="writepost.php" title="nouveaupost">Poser une question</a>
 
