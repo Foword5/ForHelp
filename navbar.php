@@ -9,7 +9,6 @@
 </head>
 <body>
     <nav style="background:#6667ab;">
-        <a> bonjour ici c'est la place pour la barre de navigation </a><br />
         <a class="nav-bouton" href="index.php" title="recherche">Recherche</a>
         <a class="nav-bouton" href="writepost.php" title="nouveaupost">Poser une question</a>
 
