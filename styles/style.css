@@ -40,3 +40,7 @@ button:hover {
     font-family: 'Montserrat', sans-serif;
     cursor: pointer;
 }
+
+.bloc-recherche-post {
+    border: #000000
+}
