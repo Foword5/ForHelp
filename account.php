@@ -21,7 +21,7 @@
                     if(is_numeric($_GET["user"]) && $_GET["user"]!=$_SESSION["connected"]){
                         echo getUser($connexion,$_GET["user"])["username"];
                     }else{
-                        echo "Mon compte : ".getUser($connexion,$_GET["user"])["username"];
+                        echo "Mon compte : ".getUser($connexion,$_SESSION["connected"])["username"];
                     }
                 }
             ?>
