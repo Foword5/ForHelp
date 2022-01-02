@@ -7,29 +7,36 @@
             <link href="styles/index.css" rel="stylesheet"/>
     </head>
     <body>
-        <?php
-        include 'navbar.php';
-        include 'data/functions.php';
-        include 'data/db_login.php';
+        
+        <?php include "data/navbar.php";?>
+        <main>
+            <?php
+            include 'data/functions.php';
+            include 'data/db_login.php';
 
-        $connexion=mysqli_connect($host,$login,$mdp,$bdd) or die("connexion impossible");
-        $bd_get = "SELECT * FROM posts";
+            $connexion=mysqli_connect($host,$login,$mdp,$bdd) or die("connexion impossible");
+            $bd_get = "SELECT * FROM posts";
 
-        $result = mysqli_query($connexion, $bd_get) or die('erreur');
+            $result = mysqli_query($connexion, $bd_get) or die('erreur');
 
 
-        while($ligne = mysqli_fetch_array($result, MYSQLI_ASSOC)){    
-            echo " <div id='index'>
-                        <b id='arbo'>" .getCategoryArbo($connexion, $ligne['categoryid']). "</b>
-                        <h3>" .$ligne['title']. "</h3>
-                        <p>" .$ligne['text']. "</p>
-                        </br>
-                        <a href='post.php?id=".$ligne["postid"]."'><button id='voirplus'>Voir plus</button></a>
-                    </div>
-            ";
-        }
+            while($ligne = mysqli_fetch_array($result, MYSQLI_ASSOC)){    
+                echo " <div id='index'>
+                            <b id='arbo'>" .getCategoryArbo($connexion, $ligne['categoryid']). "</b>
+                            <h3>" .$ligne['title']. "</h3>";
+                if(strlen($ligne["text"])>=200){
+                    echo "<p>" .substr($ligne['text'],0,200). "...</p>";
+                }else{
+                    echo "<p>" .$ligne['text']. "</p>";
+                }
 
-        ?>
+                echo "</br>
+                    <a href='post.php?post=".$ligne["postid"]."'><button id='voirplus'>Voir plus</button></a>
+                </div>";
+            }
+
+            ?>
+        </main>
     </body>
 </html>
 

@@ -24,63 +24,65 @@
         <link href="styles/post.css" rel="stylesheet"/>
     </head>
     <body>
-        <?php include "navbar.php"; ?>
-        <div id="post">
-            <div id="arbo">
-                <?php echo getCategoryArbo($connexion,$post["categoryid"]); ?>
+        <?php include "data/navbar.php"; ?>
+        <main>
+            <div id="post">
+                <div id="arbo">
+                    <?php echo getCategoryArbo($connexion,$post["categoryid"]); ?>
+                </div>
+                <h3>
+                    <?php echo $post["title"] ?>
+                </h3>
+                <p>
+                    <?php echo $post["text"] ?>
+                </p>
+                <table id="post_bot">
+                    <tr>
+                        <td><?php echo $autor["username"]; ?></td>
+                        <td class="table_right"><a href="writeanswer.php?post=<?php echo $postid;?>"><button>Écrire une réponse</button></a></td>
+                    </tr>
+                </table>
             </div>
-            <h3>
-                <?php echo $post["title"] ?>
-            </h3>
-            <p>
-                <?php echo $post["text"] ?>
-            </p>
-            <table id="post_bot">
-                <tr>
-                    <td><?php echo $autor["username"]; ?></td>
-                    <td class="table_right"><a href="writeanswer.php?post=<?php echo $postid;?>"><button>Écrire une réponse</button></a></td>
-                </tr>
-            </table>
-        </div>
 
-        <?php
-            // ------Answers
+            <?php
+                // ------Answers
 
-            $req="SELECT * from answers where postid = ? ORDER BY isgood DESC";
+                $req="SELECT * from answers where postid = ? ORDER BY isgood DESC";
 
-            $stmt = mysqli_prepare($connexion, $req);
-            mysqli_stmt_bind_param($stmt, "i", $postid);
-            mysqli_stmt_execute($stmt);
-            $result = mysqli_stmt_get_result($stmt);
-            mysqli_stmt_close($stmt);
+                $stmt = mysqli_prepare($connexion, $req);
+                mysqli_stmt_bind_param($stmt, "i", $postid);
+                mysqli_stmt_execute($stmt);
+                $result = mysqli_stmt_get_result($stmt);
+                mysqli_stmt_close($stmt);
 
-            foreach($result as $answer){
-                if($answer["isgood"] == 1){
-                    echo "
-                        <div class='answer'>
-                            <div class='answer_top'>
-                                <img src='data/img/check.png' alt='Good answer' class='check_img' title='Réponse validé par l'auteur'>
-                                ".getUser($connexion,$answer["userid"])["username"]."
+                foreach($result as $answer){
+                    if($answer["isgood"] == 1){
+                        echo "
+                            <div class='answer'>
+                                <div class='answer_top'>
+                                    <img src='data/img/check.png' alt='Good answer' class='check_img' title='Réponse validé par l'auteur'>
+                                    ".getUser($connexion,$answer["userid"])["username"]."
+                                </div>
+                                <div class='answer_text'>
+                                    ".$answer["text"]."
+                                </div>
                             </div>
-                            <div class='answer_text'>
-                                ".$answer["text"]."
+                            ";
+                    }else{
+                        echo "
+                            <div class='answer'>
+                                <div class='answer_top'>
+                                    ".getUser($connexion,$answer["userid"])["username"]."
+                                </div>
+                                <div class='answer_text'>
+                                    ".$answer["text"]."
+                                </div>
                             </div>
-                        </div>
-                        ";
-                }else{
-                    echo "
-                        <div class='answer'>
-                            <div class='answer_top'>
-                                ".getUser($connexion,$answer["userid"])["username"]."
-                            </div>
-                            <div class='answer_text'>
-                                ".$answer["text"]."
-                            </div>
-                        </div>
-                        ";
+                            ";
+                    }
                 }
-            }
-        ?>
+            ?>
+        </main>
     </body>
     <?php
         mysqli_close($connexion);
