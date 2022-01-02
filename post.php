@@ -38,7 +38,7 @@
             <table id="post_bot">
                 <tr>
                     <td><?php echo $autor["username"]; ?></td>
-                    <td class="table_right"><a href="answer.php?post=<?php echo $postid;?>"><button>Écrire une réponse</button></a></td>
+                    <td class="table_right"><a href="writeanswer.php?post=<?php echo $postid;?>"><button>Écrire une réponse</button></a></td>
                 </tr>
             </table>
         </div>
