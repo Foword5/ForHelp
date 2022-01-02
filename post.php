@@ -24,7 +24,7 @@
         <link href="styles/post.css" rel="stylesheet"/>
     </head>
     <body>
-        <?php include "navbar.php"; ?>
+        <?php include "data/navbar.php"; ?>
         <main>
             <div id="post">
                 <div id="arbo">
