@@ -31,7 +31,7 @@
                 }
 
                 echo "</br>
-                    <a href='post.php?id=".$ligne["postid"]."'><button id='voirplus'>Voir plus</button></a>
+                    <a href='post.php?post=".$ligne["postid"]."'><button id='voirplus'>Voir plus</button></a>
                 </div>";
             }
 
