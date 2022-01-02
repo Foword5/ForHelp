@@ -15,7 +15,9 @@
 
         foreach ($result as $ligne) $cat = $ligne;
         if (isset($cat)){
-            session_start();
+            if(session_status() != PHP_SESSION_ACTIVE){
+                session_start();
+            }
             $_SESSION['connected'] = $cat["userid"];
             header('Location: flux.php');
             exit(0);

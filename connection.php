@@ -11,7 +11,9 @@
             <?php
             require "data/db_login.php";
 
-            session_start();
+            if(session_status() != PHP_SESSION_ACTIVE){
+                session_start();
+            }
             if(isset($_SESSION['connected'])){
                 $connexion=mysqli_connect($host,$login,$mdp,$bdd) or die("connexion impossible");
         
