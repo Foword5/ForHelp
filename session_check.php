@@ -1,5 +1,7 @@
 <?php
-    session_start();
+    if(session_status() != PHP_SESSION_ACTIVE){
+        session_start();
+    }
     require "data/db_login.php";
 
     if(isset($_SESSION['connected'])){
