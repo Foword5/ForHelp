@@ -6,7 +6,8 @@
         <link href="styles/style.css" rel="stylesheet"/>
     </head>
     <body>
-        <?php include 'data/navbar.php'; ?>
+        <?php include 'data/navbar.php'; 
+            include "data/functions.php";?>
         <main>
             <?php
                 if(isset($_GET["post"])){
