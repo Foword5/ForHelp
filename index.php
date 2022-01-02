@@ -23,12 +23,16 @@
             while($ligne = mysqli_fetch_array($result, MYSQLI_ASSOC)){    
                 echo " <div id='index'>
                             <b id='arbo'>" .getCategoryArbo($connexion, $ligne['categoryid']). "</b>
-                            <h3>" .$ligne['title']. "</h3>
-                            <p>" .$ligne['text']. "</p>
-                            </br>
-                            <a href='post.php?id=".$ligne["postid"]."'><button id='voirplus'>Voir plus</button></a>
-                        </div>
-                ";
+                            <h3>" .$ligne['title']. "</h3>";
+                if(strlen($ligne["text"])>=200){
+                    echo "<p>" .substr($ligne['text'],0,200). "...</p>";
+                }else{
+                    echo "<p>" .$ligne['text']. "</p>";
+                }
+
+                echo "</br>
+                    <a href='post.php?id=".$ligne["postid"]."'><button id='voirplus'>Voir plus</button></a>
+                </div>";
             }
 
             ?>
