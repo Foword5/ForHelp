@@ -42,6 +42,8 @@ create table IF NOT EXISTS projet.answers (
     isgood int NOT NULL DEFAULT 0,
     postid int,
     userid int,
+    parent int,
+    FOREIGN KEY (parent) REFERENCES projet.answers(answerid) ON DELETE CASCADE,
     FOREIGN KEY (postid) REFERENCES projet.posts(postid) ON DELETE CASCADE,
     FOREIGN KEY (userid) REFERENCES projet.users(userid) ON DELETE CASCADE
 );
