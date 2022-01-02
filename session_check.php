@@ -13,15 +13,14 @@
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
 
-        foreach ($result as $ligne) $cat = $ligne;
-        if (!(isset($cat))){
+        if (!($result)){
             $_SESSION['connected'] = NULL;
-            header('Location: connexion.php?id=connexion_error');
+            header('Location: connection.php?id=connexion_error');
             exit(0);
         }
 
     }else{
-        header('Location: connexion.php?id=connexion_error');
+        header('Location: connection.php?id=connexion_error');
         exit(0);
     }
 ?>

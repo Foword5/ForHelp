@@ -21,11 +21,11 @@
             exit(0);
         }
         else {
-            header('Location: connexion.php?id=pwd-mail_error');
+            header('Location: connection.php?id=pwd-mail_error');
         }
         mysqli_stmt_close($stmt);
     }
     else {
-        header('Location: connexion.php');
+        header('Location: connection.php');
     }
 ?>

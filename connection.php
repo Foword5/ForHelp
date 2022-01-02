@@ -11,23 +11,38 @@
             <?php
             require "data/db_login.php";
 
+            session_start();
+            if(isset($_SESSION['connected'])){
+                $connexion=mysqli_connect($host,$login,$mdp,$bdd) or die("connexion impossible");
+        
+                $req="select userid from users where userid = ?";
+        
+                $stmt = mysqli_prepare($connexion, $req);
+                mysqli_stmt_bind_param($stmt, "i", $_SESSION['connected']);
+                mysqli_stmt_execute($stmt);
+                $result = mysqli_stmt_get_result($stmt);
+        
+                if ($result){
+                    header('Location: index.php');
+                    exit(0);
+                }
+            }
+            //connexion.php n'utilise pas session_check.php pour éviter une boucle infinie de redirection
+
             if (isset($_GET['id'])){
                 $id=$_GET['id'];
                 if ($id=="pwd-mail_error"){
-                    echo "<p style='color=red;'>L'adresse mail ou le mot de passe sont erronés</p>";
+                    echo "<p style='color:red;'>L'adresse mail ou le mot de passe sont erronés</p>";
                 }
                 elseif ($id=="connexion_error"){
-                    echo "<p style='color=red;'>Erreur de Connexion</p>";
-                    //Par exemple essayer de revenir en arrière sur une page être s'être déconnecté
+                    echo "<p style='color:red;'>Veuillez vous connecter</p>";
+                    //Par exemple essayer de revenir en arrière sur une page ou il faut s'être déconnecté
                 }
                 elseif ($id=="logout"){
-                    echo "<p style='color=red;'>Au revoir</p>";
+                    echo "<p style='color:red;'>Au revoir</p>";
                 }
             }
             
-            include "connection_check";
-            //Si l'utilisateur est connecté, le salut et affiche de bouton de deconnexion 
-            //connexion.php n'utilise pas session_check.php pour éviter une boucle infinie de redirection
             ?>
 
             <form action='connection_check.php' method='post'>
