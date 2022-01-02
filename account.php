@@ -6,12 +6,9 @@
         <link href="styles/style.css" rel="stylesheet"/>
     </head>
     <body>
-
-        <?php
-
-        echo "<br />";
-
-        ?>
-
+        <?php include "data/navbar.php"; ?>
+        <main>
+            
+        </main>
     </body>
 </html>

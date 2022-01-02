@@ -6,13 +6,9 @@
         <link href="styles/style.css" rel="stylesheet"/>
     </head>
     <body>
-        <?php include 'navbar.php'; ?>
-        <?php
+        <?php include "data/navbar.php";?>
+        <main>
 
-        echo "<br />";
-
-        include "session_check.php";
-        ?>
-
+        </main>
     </body>
 </html>
