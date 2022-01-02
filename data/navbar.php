@@ -10,7 +10,7 @@
         }
         if(isset($_SESSION["connected"])){
             echo "<div id='nav_right'>
-                    <a href='account.php?id=".$_SESSION["connected"]."'>Mon Compte</a>
+                    <a href='account.php?user=me'>Mon Compte</a>
                     <a href='flux.php'>Fil d'actualité</a>
                 </div>
                 <div id='nav_disconnect'>
