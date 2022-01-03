@@ -15,7 +15,8 @@
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
 
-        if (!($result)){
+        foreach($result as $ligne) $cat = $ligne;
+        if (!isset($cat)){
             $_SESSION['connected'] = NULL;
             header('Location: connection.php?id=connexion_error');
             exit(0);
