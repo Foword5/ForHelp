@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>Connexion - Forum d'entraide</title>
         <link href="styles/style.css" rel="stylesheet"/>
+        <link href="styles/connection.css" rel="stylesheet"/>
     </head>
     <body>
         <?php include "data/navbar.php"; ?>
@@ -48,11 +49,17 @@
             ?>
 
             <form action='connection_check.php' method='post'>
-                Adresse Mail <input type='text' name='mail'>
-                <br><br>
-                Mot de Passe <input type='password' name='mdp'>
-                <br><br>
-                <input type='submit' name='ok' value='Connexion'>
+                <table>
+                    <tr>
+                        <td>Adresse Mail</td>
+                        <td><input type='text' name='mail'></td>
+                    </tr><tr>
+                        <td>Mot de Passe</td>
+                        <td><input type='password' name='mdp'></td>
+                    </tr><tr>
+                        <td colspan="2"  id="submit" ><input type='submit' name='ok' value='Connexion'></td>
+                    </tr>
+                </table>
             </form>
         </main>
     </body>
