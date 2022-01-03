@@ -17,7 +17,11 @@ body {
     margin: 0;
 }
 
-button {
+input {
+    accent-color: #6667ab;
+}
+
+button, input[type="submit"] {
     border-radius: 5px;
     height: 40px;
     font-size: 15px;
@@ -29,7 +33,7 @@ button {
     padding: 0 10px 0 10px;
 }
 
-button:hover {
+button:hover, input[type="submit"]:hover {
     transform: scale(90%);
     transition: 200ms;
     cursor: pointer;
