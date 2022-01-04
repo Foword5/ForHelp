@@ -11,16 +11,16 @@
             or die("connexion impossible");
           
             $post = getPost($connexion,$postid);
-            if (!$post) header("Location:unknow.html");
+            if (!$post) header("Location:unknow.php");
 
             $autor = getUser($connexion,$post["userid"]);            
-        }else header("Location:unknow.html"); 
+        }else header("Location:unknow.php"); 
     ?>
     <head>
         <meta charset="UTF-8">
         <title>ForHelp - <?php echo $post["title"]; ?></title>
         <link href="styles/style.css" rel="stylesheet"/>
-
+        
         <link href="styles/post.css" rel="stylesheet"/>
     </head>
     <body>

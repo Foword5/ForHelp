@@ -6,6 +6,9 @@
         <link href="styles/style.css" rel="stylesheet"/>
     </head>
     <body>
-        <h1>Page inexistante</h1>
+        <?php include "data/navbar.php";?>
+        <main>
+            <h1>Page inexistante</h1>
+        </main>
     </body>
 </html>

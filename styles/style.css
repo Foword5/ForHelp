@@ -52,6 +52,16 @@ nav {
     display: flex;
 }
 
+textarea {
+    width: 100%;
+    height: 100px;
+}
+
+select {
+    text-align: center;
+    text-align-last: center;
+}
+
 #navseparator {
     background-color: #6667ab;
     width: 100%;
