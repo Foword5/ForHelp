@@ -1,6 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 
-body{
+body, textarea{
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
 }
@@ -17,7 +17,7 @@ body {
     margin: 0;
 }
 
-input {
+input, textarea{
     accent-color: #6667ab;
 }
 
@@ -50,16 +50,6 @@ nav {
     top: 0;
     z-index:1;
     display: flex;
-}
-
-textarea {
-    width: 100%;
-    height: 100px;
-}
-
-select {
-    text-align: center;
-    text-align-last: center;
 }
 
 #navseparator {
