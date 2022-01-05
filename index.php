@@ -15,7 +15,7 @@
             include 'data/db_login.php';
 
             $connexion=mysqli_connect($host,$login,$mdp,$bdd) or die("connexion impossible");
-            $bd_get = "SELECT * FROM posts";
+            $bd_get = "SELECT * FROM posts ORDER BY postid DESC";
 
             $result = mysqli_query($connexion, $bd_get) or die('erreur');
 
