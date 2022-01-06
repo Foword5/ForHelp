@@ -57,4 +57,28 @@
         }
         return $return;
     }
+
+    function getCatList($connexion){
+        $req = "SELECT categoryid,name,parent FROM categories";
+        $result = mysqli_query($connexion, $req) or die('erreur');
+
+        $result = mysqli_fetch_all($result);
+
+        return getCatListRec($result,NULL,0);
+    }
+
+    function getCatListRec($result,$parent,$profondeur){
+        $cats = array();
+        foreach($result as $ligne){
+            if($ligne[2]==$parent){
+                array_push($cats,array($ligne[0],$ligne[1],$profondeur));
+
+                $sons = getCatListRec($result,$ligne[0],$profondeur+1);
+                foreach($sons as $value){
+                    array_push($cats,$value);
+                }
+            }
+        }
+        return $cats;
+    }
 ?>

@@ -1,0 +1,32 @@
+#button {
+    text-align: right;
+}
+
+textarea {
+    width: 100%;
+    height: 500px;
+    font-size: 20px;
+    resize: none;
+}
+
+table{
+    width: 80%;
+    margin: 0 10% 0 10%;
+}
+
+#title_input {
+    width: 100%;
+    font-size: 20px;
+    height: 50px;
+    resize: none;
+}
+
+#title {
+    font-size: 30px;
+    text-align: center;
+}
+
+#cat_input {
+    font-size: 15px;
+    width: 50%;
+}
