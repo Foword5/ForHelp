@@ -11,17 +11,14 @@
             or die("connexion impossible");
           
             $post = getPost($connexion,$postid);
-            if (!$post) header("Location:unknow.php");
-
-            $autor = getUser($connexion,$post["userid"]);            
+            if (!$post) header("Location:unknow.php");          
         }else header("Location:unknow.php"); 
     ?>
     <head>
         <meta charset="UTF-8">
         <title>répondre - Forum d'entraide</title>
         <link href="styles/style.css" rel="stylesheet"/>
-
-        <link href="styles/post.css" rel="stylesheet"/>
+        <link href="styles/writeanswer.css" rel="stylesheet"/>
     </head>
     <body>
         <?php include 'data/navbar.php'; ?>
@@ -37,11 +34,11 @@
                     <?php echo $post["text"] ?>
                 </p>
             </div>
-            <form <?php echo 'action="sendanswer.php?post="'.$_GET["post"]; ?> method="POST" class="post-form">
-                <h4 STYLE="padding:0 0 0 20px;"><u>Réponse :</u></h4>
-                <textarea class="proposition-textarea" name="description" required=""></textarea>
-                <br />
-                <button type="submit" class="proposition-bouton" name="submit">Poster</button>
+            <form action="sendanswer.php?post=<?php echo $postid; ?>" method="POST" id="form">
+                <textarea id="text" name="text" required placeholder="Votre réponse"></textarea>
+                <div class="right">
+                    <button type="submit" id="submit" name="post">Poster</button>
+                </div>
             </form>
         </main>
     </body>
