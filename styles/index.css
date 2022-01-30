@@ -1,4 +1,4 @@
-#index {
+.index {
     border: 2px solid black;
     font-size: 20px;
     margin: 10px auto 0 auto;
@@ -7,11 +7,9 @@
     position: relative;
 }
 
-
-
-#arbo {
+.arbo {
     border: 2px solid black;
-    margin: 15px;
+    margin: -17px -17px 0 -17px;
     padding: 5px;
 }
 
@@ -23,14 +21,14 @@ h3 {
     text-decoration-thickness: 2px;
 }
 
-#voirplus{
+.voirplus{
     position: absolute;
     right: 10px;
     bottom: 5px;
 }
 
 
-#index p{
+.index p{
     margin: 10px;
     border: 2px solid #999;
     background-color: #DDD;
