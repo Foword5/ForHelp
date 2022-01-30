@@ -127,6 +127,8 @@ INSERT INTO projet.answers(isgood,userid,postid,text) VALUES (0,3,3,"Lorem ipsum
 
 INSERT INTO projet.follow(categoryid,userid) VALUES (3,1);
 INSERT INTO projet.follow(categoryid,userid) VALUES (4,1);
+INSERT INTO projet.follow(categoryid,userid) VALUES (6,1);
+INSERT INTO projet.follow(categoryid,userid) VALUES (13,1);
 INSERT INTO projet.follow(categoryid,userid) VALUES (5,2);
 INSERT INTO projet.follow(categoryid,userid) VALUES (15,2);
 INSERT INTO projet.follow(categoryid,userid) VALUES (9,3);
