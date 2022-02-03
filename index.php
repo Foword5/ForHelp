@@ -16,9 +16,9 @@
 
             $connexion=mysqli_connect($host,$login,$mdp,$bdd) or die("connexion impossible");
             $bd_get = "SELECT * FROM posts ORDER BY postid DESC";
-
             $result = mysqli_query($connexion, $bd_get) or die('erreur');
 
+            //echo "Bonjour " .getUser($connexion,$_SESSION["connected"])["username"];
 
             while($ligne = mysqli_fetch_array($result, MYSQLI_ASSOC)){    
                 echo " <div id='index'>
