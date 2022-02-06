@@ -21,6 +21,9 @@
                 else if ($_GET["succes"] == "usernamesucces") {
                     echo "<p style='color:green;'>usernamesucces</p>";
                 }
+                else if ($_GET["succes"] == "mailsucces") {
+                    echo "<p style='color:green;'>mailsucces</p>";
+                }
             }
 
             $connexion=mysqli_connect($host,$login,$mdp,$bdd) or die("connexion impossible");

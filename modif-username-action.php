@@ -5,41 +5,36 @@
         session_start();
     }
 
-    if (isset($_POST['cnewusername'])){
+    if (isset($_POST['password'])){
 
-        $oldusername = $_POST['oldusername'];
+        $password = $_POST['password'];
         $newusername = $_POST['newusername'];
-        $cnewusername = $_POST['cnewusername'];
+ 
 
         $req = "SELECT * FROM users WHERE userid = ?";
         $stmt = mysqli_prepare($connexion, $req);
-        mysqli_stmt_bind_param($stmt, "i", $_SESSION["connected"]);// le type de ce que tu met (i pour int), puis la variable a associer
+        mysqli_stmt_bind_param($stmt, "i", $_SESSION["connected"]);
         mysqli_stmt_execute($stmt);
-        $result = mysqli_stmt_get_result($stmt);//tu obtiens une liste de liste
+        $result = mysqli_stmt_get_result($stmt);
         mysqli_stmt_close($stmt);
 
         $req_fetch = mysqli_fetch_array($result, MYSQLI_ASSOC);
-        $data_username = $req_fetch['username'];
+        $data_pass = $req_fetch['password'];
 
-        if ($data_username == $oldusername){
-            if ($newusername == $cnewusername) {
-                $update_req = "UPDATE users SET username = '$newusername' WHERE userid=?";
-                $stmt = mysqli_prepare($connexion, $update_req);
-                mysqli_stmt_bind_param($stmt, "i", $_SESSION["connected"]);// le type de ce que tu met (i pour int), puis la variable a associer
-                mysqli_stmt_execute($stmt);
-                $result = mysqli_stmt_get_result($stmt);//tu obtiens une liste de liste
-                mysqli_stmt_close($stmt);
-    
-            header('Location: index.php?succes=usernamesucces');
-            }
-
-            else {
-                header('Location : modif-username.php?error=dontmatch');
-            }      
+        if ($data_pass == $password){
+            
+            $update_req = "UPDATE users SET username = '$newusername' WHERE userid=?";
+            $stmt = mysqli_prepare($connexion, $update_req);
+            mysqli_stmt_bind_param($stmt, "si", $_SESSION["connected"]);
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
+            mysqli_stmt_close($stmt);
+            
+           header('Location: index.php?succes=usernamesucces');
         }   
 
         else {
-            header('Location: modif-username.php?error=mauvaisold');
+            header('Location: modif-username.php?error=mauvaispass');
         }
     }
     

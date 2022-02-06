@@ -11,10 +11,11 @@
     include "data/navbar.php";
 
     if (isset($_GET['error'])){
-        if ($_GET["error"] == "mauvaispass") {
-          echo "<p style='color:red;'>mdp mauvais</p>";
-        }
-    }
+      if ($_GET["error"] == "mauvaispass") {
+        echo "<p style='color:red;'>mdp mauvais</p>";
+      }
+  }
+    
 ?>
 
 <table>
@@ -28,10 +29,10 @@
             </td>
             </tr><tr>
             <td>
-                <label>Nouveau nom d'utilisateur :</label>
+                <label>Nouveau mail :</label>
             </td>
             <td>
-                <input type="text" name="newusername">
+                <input type="text" name="newmail">
             </td>
             </tr><tr>
             <td>
@@ -45,3 +46,4 @@
 </table>
 </body>
 </html>
+
