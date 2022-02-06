@@ -10,14 +10,40 @@
         
         <?php include "data/navbar.php";?>
         <main>
+            <div id="search_fil">
+                <form action="index.php" method="GET">
+                    <table>
+                        <tr>
+                            <td><input type="text" name="search" placeholder="Rechercher"></td>
+                            <td id="search_td_right"><input type="submit"value="Rechercher" id="submit"></td>
+                        <tr>
+                    </table>
+                </form>
+            </div>
             <?php
             include 'data/functions.php';
             include 'data/db_login.php';
 
             $connexion=mysqli_connect($host,$login,$mdp,$bdd) or die("connexion impossible");
-            $bd_get = "SELECT * FROM posts ORDER BY postid DESC";
 
-            $result = mysqli_query($connexion, $bd_get) or die('erreur');
+
+
+            if(isset($_GET["search"])){
+                $bd_get = "SELECT * FROM posts where title like ? or text like ? order by postid ASC; ";
+                $search = "%".$_GET["search"]."%";
+
+                $stmt = mysqli_prepare($connexion, $bd_get);
+                mysqli_stmt_bind_param($stmt, "ss",$search,$search);
+                mysqli_stmt_execute($stmt);
+                $result = mysqli_stmt_get_result($stmt);
+                mysqli_stmt_close($stmt);
+            }else{
+                $bd_get = "SELECT * FROM posts ORDER BY postid DESC";
+                $result = mysqli_query($connexion, $bd_get) or die('erreur');
+            }
+
+
+
 
 
             while($ligne = mysqli_fetch_array($result, MYSQLI_ASSOC)){    

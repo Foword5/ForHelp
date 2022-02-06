@@ -35,3 +35,24 @@ h3 {
     padding: 15px;
     border-radius :4px;
 }
+
+#search_fil table {
+    width: 100%;
+}
+
+#search_fil input[type="text"] {
+    height: 30px;
+    font-size: 20px;
+}
+
+#search_fil input{
+    width: 100%;
+}
+
+#search_fil td {
+    padding: 5px;
+}
+
+#search_td_right {
+    width: 20%;
+}
