@@ -44,11 +44,8 @@
             </div>
             
             <div class='button-modif'>
-                <!--
-                <a href='modifaccount/modif-username.php'><button id='modif-username'>Modifier l'username</button></a>
-                <a href='modifaccount/modif-mdp.php'><button id='modif-mdp'>Modifier le mot de passe</button></a>
-        -->
-                <a href='modif-mdp.php'><button id='modif'>Modif test</button></a>
+                <a href='modif-mdp.php'><button id='modif'>Modifier votre mot de passe</button></a>
+                <a href='modif-username.php'><button id='modif'>Modif votre nom d'utilisateur</button></a>
             </div>
 
         </div>       
