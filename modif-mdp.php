@@ -12,10 +12,10 @@
 
     if (isset($_GET['error'])){
       if($_GET["error"] == "dontmatch") {
-        echo "<p style='color:red;'>newpass dont match cnewpass</p>";
+        echo "<p style='color:red;'>La confirmation ne correspond pas au nouveau mot de passe</p>";
       }
       else if ($_GET["error"] == "mauvaisold") {
-        echo "<p style='color:red;'>oldpass mauvais</p>";
+        echo "<p style='color:red;'>Mauvais ancien mot de passe</p>";
       }
     }
     

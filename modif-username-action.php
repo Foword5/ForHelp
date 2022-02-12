@@ -25,7 +25,7 @@
             
             $update_req = "UPDATE users SET username = '$newusername' WHERE userid=?";
             $stmt = mysqli_prepare($connexion, $update_req);
-            mysqli_stmt_bind_param($stmt, "si", $_SESSION["connected"]);
+            mysqli_stmt_bind_param($stmt, "i", $_SESSION["connected"]);
             mysqli_stmt_execute($stmt);
             $result = mysqli_stmt_get_result($stmt);
             mysqli_stmt_close($stmt);

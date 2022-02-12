@@ -12,13 +12,13 @@
 
     if (isset($_GET['error'])){
         if ($_GET["error"] == "mauvaispass") {
-          echo "<p style='color:red;'>mdp mauvais</p>";
+          echo "<p style='color:red;'>Mauvais mot de passe</p>";
         }
     }
 ?>
 
 <table>
-    <form>
+    <form action='modif-username-action.php' method="post">
             <tr>
             <td>
               <label> Mot de passe :</label>
