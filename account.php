@@ -20,8 +20,19 @@
                 }else{
                     if(is_numeric($_GET["user"]) && $_GET["user"]!=$_SESSION["connected"]){
                         echo getUser($connexion,$_GET["user"])["username"];
+                        echo "<br/>";
+                        echo getUser($connexion,$_GET["user"])["email"];
+                        echo "<br/>";
                     }else{
+                        echo "<account>";
                         echo "Mon compte : ".getUser($connexion,$_SESSION["connected"])["username"];
+                        echo "<br/>";
+                        echo "Mon email : ".getUser($connexion,$_SESSION["connected"])["email"];
+                        echo "</account>";
+                        echo "<br/><br/>
+                        <a href='edit-account.php'><button class='button-account'>modifier profil</button></a>
+                        <a href='edit-psswd.php'><button class='button-account'>changer de mot de passe</button></a>
+                        ";
                     }
                 }
             ?>
