@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Modifier le profil - Forum d'entraide</title>
+    <title>Modifier votre email - ForHelp</title>
     <link href="styles/style.css" rel="stylesheet"/>
     <link href="styles/modifinfo.css" rel="stylesheet"/>
 </head>

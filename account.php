@@ -47,6 +47,7 @@
                 <a href='modif-mdp.php'><button id='modif'>Modifier mon mot de passe</button></a>
                 <a href='modif-username.php'><button id='modif'>Modif mon nom d'utilisateur</button></a>
                 <a href='modif-mail.php'><button id='modif'>Modif mon mail</button></a>
+                <a href='delete-user.php'><button id='delete'>Supprimer le compte</button></a>
             </div>
 
         </div>       
