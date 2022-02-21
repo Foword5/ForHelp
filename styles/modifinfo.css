@@ -1,0 +1,17 @@
+table {
+    margin: 100px auto 100px auto;
+    width: 50%;
+}
+
+table td {
+    padding: 0 20px 15px 0;
+    /*text-align: right;*/
+}
+
+table input[type="text"], table input[type="password"], table input[type="email"]{
+    width: 100%;
+}
+
+#submit{
+    text-align: right;
+}

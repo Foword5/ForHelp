@@ -7,8 +7,9 @@
             <link href="styles/index.css" rel="stylesheet"/>
     </head>
     <body>
-        
+
         <?php include "data/navbar.php";?>
+
         <div class="page">
             <main>
                 <div id="search_fil">
@@ -25,19 +26,29 @@
                 include 'data/functions.php';
                 include 'data/db_login.php';
 
-                $connexion=mysqli_connect($host,$login,$mdp,$bdd) or die("connexion impossible");
+                if (isset($_GET['succes'])) {
+                    if($_GET["succes"] == "mdpsucces") {
+                        echo "<p style='color:green;'>Modifié mot de passe avec succès</p>";
+                    }
+                    else if ($_GET["succes"] == "usernamesucces") {
+                        echo "<p style='color:green;'>Modifié username avec succès</p>";
+                    }
+                    else if ($_GET["succes"] == "mailsucces") {
+                        echo "<p style='color:green;'>Modifié email avec succès</p>";
+                    }
+                }
 
-            
+                $connexion=mysqli_connect($host,$login,$mdp,$bdd) or die("connexion impossible");
 
                 if(isset($_GET["search"])){
                     $bd_get = "SELECT * FROM posts where title like ? or text like ? order by postid ASC; ";
                     $search = "%".$_GET["search"]."%";
-
                     $stmt = mysqli_prepare($connexion, $bd_get);
                     mysqli_stmt_bind_param($stmt, "ss",$search,$search);
                     mysqli_stmt_execute($stmt);
                     $result = mysqli_stmt_get_result($stmt);
                     mysqli_stmt_close($stmt);
+
                 }else{
                     $bd_get = "SELECT * FROM posts ORDER BY postid DESC";
                     $result = mysqli_query($connexion, $bd_get) or die('erreur');
@@ -111,4 +122,3 @@
         </div>
     </body>
 </html>
-
