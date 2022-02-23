@@ -62,7 +62,7 @@
                         </td>
                     </tr><tr>
                         <td colspan="2" id="submit">
-                            <input type="submit" name="enter" value="s'inscrire">
+                            <input type="submit" name="enter" value="S'inscrire">
                         </td>
                     </tr>
                 </form>

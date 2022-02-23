@@ -95,3 +95,7 @@ nav a:hover {
     color: #6667ab;
     transition: 200ms;
 }
+
+footer{
+    margin-top: 3px;
+}

@@ -5,6 +5,7 @@
             <title>Rechercher - ForHelp</title>
             <link href="styles/style.css" rel="stylesheet"/>
             <link href="styles/index.css" rel="stylesheet"/>
+            <script type="module" src="footer.js"></script>
     </head>
     <body>
 
@@ -73,8 +74,13 @@
                     <a href='post.php?post=".$ligne["postid"]."'><button class='voirplus'>Voir plus</button></a>
                 </div>";
             }
-
             ?>
         </main>
+        
+        <footer>
+            <?php include 'data/footer.php';?>
+        </footer>
+        
     </body>
+    
 </html>
