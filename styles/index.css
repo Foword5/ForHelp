@@ -56,3 +56,26 @@ h3 {
 #search_td_right {
     width: 20%;
 }
+
+sidebar {
+    background-color: white;
+    width: 20%;
+    margin: 10px;
+    padding: 10px;
+}
+
+.page {
+    width: 70%;
+    margin: auto;
+    padding: 15px;
+    display: flex;
+}
+
+main {
+    width: 75%;
+}
+
+sidebar a {
+    text-decoration: none;
+}
+
