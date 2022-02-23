@@ -6,6 +6,8 @@
         <link href="styles/style.css" rel="stylesheet"/>
         <link href="styles/account.css" rel="stylesheet"/>
         <link href="styles/index.css" rel="stylesheet"/>
+        <script type="module" src="footer.js"></script>
+
 
     </head>
     <body>
@@ -74,5 +76,9 @@
         </div>
   
     </body>
+
+    <footer>
+        <?php include 'data/footer.php';?>
+    </footer>
  
 </html>

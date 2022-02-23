@@ -5,6 +5,7 @@
             <title>Rechercher - ForHelp</title>
             <link href="styles/style.css" rel="stylesheet"/>
             <link href="styles/index.css" rel="stylesheet"/>
+            <script type="module" src="footer.js"></script>
     </head>
     <body>
 
@@ -124,5 +125,9 @@
                     ?>  
             </div>
         </div>
+      <footer>
+            <?php include 'data/footer.php';?>
+      </footer>
     </body>
+    
 </html>
