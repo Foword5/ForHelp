@@ -1,11 +1,12 @@
-.profile-image{
+profile-image{
     float: left;
+    width: 140px;
+    height: 250px;
 }
 
 .modif-email{
     float: right;
 }
-
 
 .hide {
     display: none;
