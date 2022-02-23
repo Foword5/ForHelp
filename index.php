@@ -77,10 +77,7 @@
                             </div>";
                         }
                         
-                    }
-                    else{
-                
-
+                    }else{
                         while($ligne = mysqli_fetch_array($result, MYSQLI_ASSOC)){    
                             echo " <div class='index'>
                                         <div class='arbo'>" .getCategoryArbo($connexion, $ligne['categoryid']). "</div>
@@ -101,7 +98,7 @@
             
                 
             </main>
-            <div class="menu">  
+            <sidebar>
                     <?php
                     include 'data/db_login.php';
 
@@ -109,12 +106,19 @@
                     $catlist = getCatList($connexion);
                     
                     foreach($catlist as $cat){
-                        echo "<form method='post' action='index.php?id=".$cat[0]."'>";
-                        echo "<p><input type='submit' name='".$cat[0]."' value='".$cat[1]."'></p>";
-                        echo "</form>";
-                        //for($i=0;$i<$cat[2];$i++){
-                        //  echo "&#160;&#160;&#160;";
-                        //}
+                        if(isset($_GET["search"])){
+                            echo "<a href='index.php?search=".$_GET["search"]."&id=".$cat[0]."'>";
+                            for($i=0;$i<$cat[2];$i++){
+                                echo"&#160;&#160;&#160;";
+                            }
+                            echo $cat[1]."</a><br/>";
+                        }else{
+                            echo "<a href='index.php?id=".$cat[0]."'>";
+                            for($i=0;$i<$cat[2];$i++){
+                                echo"&#160;&#160;&#160;";
+                            }
+                            echo $cat[1]."</a><br/>";
+                        }
                     }
                     
                     ?>  
