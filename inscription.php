@@ -10,6 +10,12 @@
         <?php include "data/navbar.php";?>
         <main>
             <?php
+                if (isset($_GET['succes'])) {
+                    if ($_GET["succes"] == "deletesucces") {
+                        echo "<p style='color:green;'>Supprimé le compte avec succès</p>";
+                    }
+                }
+
                 if(isset($_GET["error"])){
                     if($_GET["error"] == "notemail"){
                         echo "<p style='color:red;'>Veuillez entrer une adresse email valide</p>";
