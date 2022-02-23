@@ -96,6 +96,8 @@ nav a:hover {
     transition: 200ms;
 }
 
+/* le footer */
+
 footer{
-    margin-top: 3px;
+    margin-top: 20px;
 }
