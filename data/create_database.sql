@@ -96,11 +96,11 @@ INSERT INTO projet.categories(name,description) VALUES ("Langue","Toutes les lan
 
 -- projet.users
 
-INSERT INTO projet.users(username,email,password) VALUES("Foword","foword@gmail.com","123456");
-INSERT INTO projet.users(username,email,password) VALUES("Minh Duc","mduc@gmail.com","123456");
-INSERT INTO projet.users(username,email,password) VALUES("Galla","galla@gmail.com","123456");
-INSERT INTO projet.users(username,email,password) VALUES("Luckar","luckar@gmail.com","123456");
-INSERT INTO projet.users(username,email,password) VALUES("Aélar","thesuperaelar@gmail.com","123456");
+INSERT INTO projet.users(username,email,password,points,isteacher) VALUES("Foword","foword@gmail.com","123456",6,1);
+INSERT INTO projet.users(username,email,password,points,isteacher) VALUES("Minh Duc","mduc@gmail.com","123456",5,1);
+INSERT INTO projet.users(username,email,password,points) VALUES("Galla","galla@gmail.com","123456",4);
+INSERT INTO projet.users(username,email,password,points) VALUES("Luckar","luckar@gmail.com","123456",3);
+INSERT INTO projet.users(username,email,password,points) VALUES("Aélar","thesuperaelar@gmail.com","123456",2);
 
 -- projet.posts
 

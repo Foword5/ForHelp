@@ -31,7 +31,7 @@
                         echo "<div class='user-info'>";
                             echo "<h3>".getUser($connexion,$_GET["user"])["username"]."</h3>";
                             echo "<br/>";
-                            echo getUser($connexion,$_GET["user"])["points"] ." points";
+                            echo getUser($connexion,$_GET["user"])["points"]. ' points';
                             echo "<br/><br/><br/>";
                         echo "</div>";
                     }else{/* affiché quand c'est votre compte */
@@ -42,7 +42,7 @@
                         echo "<div class='user-info'>";
                             echo "<h3>".getUser($connexion,$_SESSION["connected"])["username"]."</h3>";
                             echo "<br/>";
-                            echo getUser($connexion,$_GET["user"])["points"] ." points";
+                            echo getUser($connexion,$_SESSION["connected"])["points"]. ' points';
                         echo "
                         <div class='button-modif' style='text-align: center;'>
                             <a href='modif-mdp.php'><button id='modif'>Modifier mon mot de passe</button></a><br/>
@@ -57,7 +57,11 @@
             <?php
                 $bd_get = "SELECT * FROM posts WHERE userid = ?";
                 $stmt = mysqli_prepare($connexion, $bd_get);
-                mysqli_stmt_bind_param($stmt, "i", $_SESSION["connected"]);// le type de ce que tu met (i pour int), puis la variable a associer
+                if(is_numeric($_GET["user"]) && $_GET["user"]!=$_SESSION["connected"]){
+                    mysqli_stmt_bind_param($stmt, "i", $_GET["user"]);// le type de ce que tu met (i pour int), puis la variable a associer
+                }else{
+                    mysqli_stmt_bind_param($stmt, "i", $_SESSION["connected"]);
+                }
                 mysqli_stmt_execute($stmt);
                 $result = mysqli_stmt_get_result($stmt);//tu obtiens une liste de liste
                 mysqli_stmt_close($stmt);
