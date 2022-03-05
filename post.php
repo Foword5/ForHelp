@@ -38,7 +38,7 @@
                 </p>
                 <table id="post_bot">
                     <tr>
-                        <td><?php echo $autor["username"]; ?></td>
+                        <td><?php echo "<u><a href='./account.php?user=".$autor["userid"]."'>" ?><?php echo $autor["username"]; ?></a></u></td>
                         <td class="table_right"><a href="writeanswer.php?post=<?php echo $postid;?>"><button>Écrire une réponse</button></a></td>
                     </tr>
                 </table>
@@ -61,7 +61,7 @@
                             <div class='answer'>
                                 <div class='answer_top'>
                                     <img src='data/img/check.png' alt='Good answer' class='check_img' title='Réponse validé par l'auteur'>
-                                    ".getUser($connexion,$answer["userid"])["username"]."
+                                        <u><a href='./account.php?user=".$answer["userid"]."'>".getUser($connexion,$answer["userid"])["username"]."</a></u>
                                 </div>
                                 <div class='answer_text'>
                                     ".$answer["text"]."
@@ -72,7 +72,7 @@
                         echo "
                             <div class='answer'>
                                 <div class='answer_top'>
-                                    ".getUser($connexion,$answer["userid"])["username"]."
+                                    <u><a href='./account.php?user=".$answer["userid"]."'>".getUser($connexion,$answer["userid"])["username"]."</a></u>
                                 </div>
                                 <div class='answer_text'>
                                     ".$answer["text"]."
