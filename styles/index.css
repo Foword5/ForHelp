@@ -71,10 +71,6 @@ sidebar {
     display: flex;
 }
 
-main {
-    width: 75%;
-}
-
 sidebar a {
     text-decoration: none;
 }
