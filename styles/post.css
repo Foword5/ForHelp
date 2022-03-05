@@ -52,3 +52,7 @@ h3 {
     font-size: 25px;
     margin-bottom: 10px;
 }
+
+a:link, a:visited, a:hover, a:active {
+    color: black;
+}
