@@ -20,8 +20,22 @@
                     session_start();
                 }
                 $connexion=mysqli_connect($host,$login,$mdp,$bdd) or die("connexion impossible");
-                if(!(isset($_GET["user"]))){
-                    header('Location: unknow.php');
+                $user = getUser($connexion,$_GET["user"]);
+                $session = getUser($connexion,$_SESSION["connected"]);
+                if (!$user && $_GET["user"]=="me"){
+                    header("Location:unknow.php");
+                }
+                if(is_numeric($_GET["user"]) && $_GET["user"]!=$_SESSION["connected"]){/* affiché pour les comptes des autres */
+                    echo "
+                        <profile-image>
+                            <img src='data/img/noprofile.png' alt='no-profile-img' style='width: 126px; height: 151px;'>
+                        </profile-image>";
+                    echo "<div class='user-info'>";
+                        echo "<h3>".getUser($connexion,$_GET["user"])["username"]."</h3>";
+                        echo "<br/>";
+                        echo getUser($connexion,$_GET["user"])["points"]. ' points';
+                        echo "<br/><br/><br/>";
+                    echo "</div>";
                 }else{/* affiché quand vous êtes connécté */
                     if(is_numeric($_GET["user"]) && $_GET["user"]!=$_SESSION["connected"]){/* affiché pour les comptes des autres */
                         echo "
