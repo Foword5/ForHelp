@@ -51,8 +51,28 @@ h3 {
 .answer_top {
     font-size: 25px;
     margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
 }
 
 a:link, a:visited, a:hover, a:active {
     color: black;
+}
+
+.user-info{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.user-info-image{
+    width: 30px;
+    height: 30px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.reponse_button{
+    width: max-content;
+    margin-left: 5px;
 }

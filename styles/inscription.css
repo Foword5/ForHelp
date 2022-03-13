@@ -1,5 +1,5 @@
 table {
-    margin: 100px auto 100px auto;
+    margin: 50px auto 50px auto;
     width: 50%;
 }
 
@@ -18,4 +18,8 @@ table input[type="text"], table input[type="password"], table input[type="email"
 
 #submit{
     text-align: right;
+}
+
+main{
+    height: fit-content;
 }

@@ -1,12 +1,10 @@
 <?php
-      include "data/db_login.php";
+      include "../data/db_login.php";
       $connexion=mysqli_connect($host,$login,$mdp,$bdd) or die("connexion impossible");
-      if(session_status() != PHP_SESSION_ACTIVE){
-          session_start();
-      }
+      if(session_status() != PHP_SESSION_ACTIVE) session_start();
 
       if (isset($_POST['password'])){
-        $password = $_POST['password'];
+        $password = md5($_POST['password']);
 
         $req = "SELECT * FROM users WHERE userid = ?";
         $stmt = mysqli_prepare($connexion, $req);
@@ -25,13 +23,15 @@
             mysqli_stmt_execute($stmt);
             $result = mysqli_stmt_get_result($stmt);
             mysqli_stmt_close($stmt);
+
+            session_destroy();
             
-            header('Location: inscription.php?succes=deletesucces');
+            header('Location: ../inscription.php?succes=deletesucces');
             mysqli_stmt_close($stmt);
         }
 
         else {
-            header('Location: delete-user.php?error=mauvais');
+            header('Location: ../delete-user.php?error=mauvais');
         }
       }
 ?>

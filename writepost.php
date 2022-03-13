@@ -2,23 +2,23 @@
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title>Nouvelle question - Forum d'entraide</title>
+        <title>Nouvelle question - ForHelp</title>
         <link href="styles/style.css" rel="stylesheet"/>
         <link href="styles/writepost.css" rel="stylesheet"/>
     </head>
     <body>
         <?php include 'data/navbar.php'; 
             include 'session_check.php'?>
-        <main>
+        <div class="page"><main>
             <?php
                 if(isset($_GET["error"])){
                     if($_GET["error"] == "cat"){
-                        echo "<p style='color:red;'>Veuillez choisir une </p>";
+                        echo "<p style='color:red;'>Veuillez choisir une catégorie</p>";
                     }
                 }
             ?>
             <div id="title">Poser une question</div>
-            <form action="sendpost.php" method="POST" class="post-form">
+            <form action="actions/sendpost.php" method="POST" class="post-form">
                 <table>
                     <tr>
                         <td colspan="2">
@@ -30,9 +30,9 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
-                            <select id="cat_input" name="categoryid" required="True">
-                                <option disabled="" selected="">Catégorie</option>
+                        <td id="bottom_writepost">
+                            <select id="cat_input" name="categoryid" required>
+                                <option disabled selected value="">Catégorie</option>
                                 <?php
                                     include 'data/functions.php';
                                     include 'data/db_login.php';
@@ -49,14 +49,15 @@
                                     }
                                 ?> 
                             </select>
-                        </td>
-                        <td id="button">
                             <button type="submit" name="post">Poster</button>
                         </td>
                     </tr>
                 </table>
             </form>
-        </main>
+        </main></div>
+        <footer>
+            <?php include "data/footer.php"; ?>
+        </footer> 
     </body>
     <?php
         mysqli_close($connexion);

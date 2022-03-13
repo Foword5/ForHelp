@@ -6,15 +6,21 @@ body, textarea{
 }
 
 main {
-    width: 50%;
+    width: 100%;
     margin: 10px auto 0 auto;
     padding: 15px;
+    height: fit-content;
     background-color: white;
+}
+
+sidebar{
+    height: fit-content;
 }
 
 body {
     background-color: #DDD;
     margin: 0;
+    word-wrap:break-word;
 }
 
 input, textarea{
@@ -37,6 +43,18 @@ button:hover, input[type="submit"]:hover {
     transform: scale(90%);
     transition: 200ms;
     cursor: pointer;
+}
+
+.page{
+    min-height: calc(100vh - 282px);
+    width: 50%;
+    margin: 0 auto 0 auto;
+    padding: 15px;
+    display: flex;
+}
+
+h1{
+    text-align: center;
 }
 
 /* Style pour la NavBar */
@@ -99,5 +117,108 @@ nav a:hover {
 /* le footer */
 
 footer{
-    margin-top: 20px;
+    background: #6667ab;
+    color: #fff;
+    bottom: 0;
+    width: 100%;
+}
+
+.content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    height: 150px;
+}
+
+.content h4{
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin-top: 5px;
+    margin-bottom: 8px;
+}
+
+.content p{
+    max-width: 500px;
+    margin: 0.1px auto;
+    margin-top: 4px;
+    font-size: 14px;
+}
+
+.source{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 33px;
+    margin-bottom: 8px;
+
+}
+
+img {
+    width: 40px;
+    height: 40px;
+}
+
+.bottom{
+    text-align: center;
+    background: #48497a;
+    padding: 1px 0;
+    height: 50px;
+}
+
+.bottom p{
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+
+/* other */
+
+.link{
+    color: black;
+    text-decoration: none;
+}
+
+.link:hover{
+    text-decoration: underline;
+}
+
+.colored{
+    color: #6667ab;
+}
+
+.highlight{
+    font-weight: bold;
+    text-decoration: underline;
+    color: #6667ab;
+}
+
+.red_button{
+    background-color: rgb(179, 0, 0)
+}
+
+.green_button{
+    background-color: rgb(0, 179, 0)
+}
+
+.invisible{
+    opacity: 0;
+}
+
+.centered{
+    text-align: center;
+}
+
+.greytext{
+    color: grey;
+}
+
+.greylink{
+    color: grey !important;
+}
+
+.greylink:hover{
+    color: rgb(75, 75, 75) !important;
 }

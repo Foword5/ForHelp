@@ -5,16 +5,14 @@
     </div>
 
     <?php
-        if(session_status() != PHP_SESSION_ACTIVE){
-            session_start();
-        }
+        if(session_status() != PHP_SESSION_ACTIVE) session_start();
         if(isset($_SESSION["connected"])){
             echo "<div id='nav_right'>
-                    <a href='account.php?user=me'>Mon Compte</a>
+                    <a href='account.php?user=".$_SESSION["connected"]."'>Mon Compte</a>
                     <a href='flux.php'>Fil d'actualité</a>
                 </div>
                 <div id='nav_disconnect'>
-                    <a href='logout.php'>Déconnexion</a>
+                    <a href='actions/logout.php'>Déconnexion</a>
                 </div>";
         }else{
             echo "<div id='nav_right'>
