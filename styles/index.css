@@ -162,3 +162,9 @@ sidebar a:hover {
     width: 20px;
     height: 100%;
 }
+
+#category_title {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+}

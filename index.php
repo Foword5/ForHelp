@@ -154,7 +154,7 @@
                 ?>
             </main>
             <sidebar>
-                <div id="category_title"></div>
+                <div id="category_title">Catégories</div>
                     <?php
                         include 'data/db_login.php';
 
