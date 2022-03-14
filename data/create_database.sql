@@ -13,7 +13,7 @@ create table IF NOT EXISTS projet.users (
     userid int PRIMARY KEY NOT NULL AUTO_INCREMENT,
     username varchar(32) NOT NULL,
     email varchar(255) NOT NULL,
-    profilepic BLOB,
+    profilepic longblob,
     password varchar(64) NOT NULL,
     points int NOT NULL DEFAULT 0,
     isteacher int NOT NULL DEFAULT 0
