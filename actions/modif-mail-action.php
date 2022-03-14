@@ -21,7 +21,7 @@
         $req_fetch = mysqli_fetch_array($result, MYSQLI_ASSOC);
         $data_pass = $req_fetch['password'];
 
-        if ($data_pass == $password){
+        if ($data_pass == md5($password)){
           if ($newmail == $cnewmail) {
             $update_req = "UPDATE users SET email = ? WHERE userid=?";
             $stmt = mysqli_prepare($connexion, $update_req);

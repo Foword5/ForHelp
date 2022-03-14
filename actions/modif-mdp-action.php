@@ -20,7 +20,7 @@
         $req_fetch = mysqli_fetch_array($result, MYSQLI_ASSOC);
         $data_pass = $req_fetch['password'];
 
-        if ($data_pass == $oldpass){
+        if ($data_pass == md5($oldpass)){
           if ($newpass == $cnewpass) {
             $update_req = "UPDATE users SET password = ? WHERE userid=?";
             $stmt = mysqli_prepare($connexion, $update_req);

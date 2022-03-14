@@ -20,7 +20,7 @@
         $req_fetch = mysqli_fetch_array($result, MYSQLI_ASSOC);
         $data_pass = $req_fetch['password'];
 
-        if ($data_pass == $password){
+        if ($data_pass == md5($password)){
             if (isset($_FILES["pfp"]) && ["image/png","image/jpeg","image/jpg"].include($_FILES["pfp"]["type"])) {
 
                 $update_req = "UPDATE users SET profilepic = ? WHERE userid=?";
