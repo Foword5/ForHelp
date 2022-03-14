@@ -1,7 +1,7 @@
 <?php
     if(isset($_POST["post"])){
-        require "data/db_login.php";
-        include 'session_check.php';
+        require "../data/db_login.php";
+        include '../session_check.php';
 
         $connexion=mysqli_connect($host,$login,$mdp,$bdd)
         or die("connexion impossible");
@@ -19,7 +19,7 @@
         foreach($result as $verif);
 
         if(!$verif){
-            header('Location: writepost.php?error=cat');
+            header('Location: ../writepost.php?error=cat');
             exit(0);
         }
 
@@ -32,8 +32,8 @@
         mysqli_stmt_bind_param($stmt, "ssii",$title,$text,$categoryid,$_SESSION["connected"]);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
-        header('Location: index.php');
+        header('Location: ../index.php');
         exit(0);
     }
-    header('Location: writepost.php');
+    header('Location: ../writepost.php');
 ?>

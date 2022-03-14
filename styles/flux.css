@@ -43,11 +43,8 @@ h3 {
 }
 
 .voirplus{
-    position: absolute;
-    right: 10px;
-    bottom: 5px;
+    margin-right: 15px;
 }
-
 
 .index p{
     margin: 10px;
@@ -55,4 +52,135 @@ h3 {
     background-color: #DDD;
     padding: 15px;
     border-radius :4px;
+}
+
+#page_title {
+    font-weight: bold;
+    text-align: center;
+    font-size: 40px;
+    margin: 0 0 5px 0;
+}
+
+.user-info{
+    display: flex;
+    align-items: center;
+}
+
+.index_bottom{
+    margin: 0 0 5px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-info-image{
+    width: 30px;
+    height: 30px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+#page_description {
+    text-align: center;
+    font-size: 15px;
+    margin: 0 0 5px 0;
+}
+
+.post_reponse {
+    display: flex;
+    align-items: center;
+}
+
+#flux_sidebar {
+    background-color: white;
+    margin: 10px 0 0 10px;
+    width: 35%;
+    display: table-cell; 
+    padding: 10px;
+}
+
+main{
+    width: 65%;
+}
+
+.page{
+    width: 50%;
+    display: flex;
+    margin: auto;
+}
+
+#sidebar_title{
+    text-align: center;
+    font-size: 25px;
+}
+
+.followed_category {
+    margin: 0 0 5px 0 ;
+}
+
+#sidebar_categories{
+    margin: 20px 10px 0 10px;
+}
+
+.retour{
+    color: gray;
+}
+
+.retour:hover{
+    color: #6667ab;
+}
+
+sidebar a {
+    text-decoration: none;
+    color:black;
+}
+
+sidebar a:hover {
+    text-decoration: none;
+    color: #6667ab;
+}
+
+#selected_cat {
+    background-color: #6667ab;
+    border-radius: 2px;
+    color: white;
+    padding: 2px 5px 2px 5px;
+}
+
+.followed_category{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#selected_cat span:hover{
+    color: black;
+}
+
+#selected_cat span{
+    color: white;
+}
+
+#selected_cat .ligne{
+    background-color: white;
+}
+
+.ligne{
+    height: 2px;
+    width: 100%;
+    margin: 0 5px 0 5px;
+    background-color: #6667ab;
+}
+
+.followed_category span{
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.followed_category span:hover{
+    color: #6667ab;
+}
+
+.mettre_a_jour{
+    margin: 20px 0 0 0;
+    text-align: right;
 }

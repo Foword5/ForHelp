@@ -1,7 +1,7 @@
 <?php
     if(isset($_POST["post"]) && isset($_GET["post"])){
-        require "data/db_login.php";
-        include 'session_check.php';
+        require "../data/db_login.php";
+        include '../session_check.php';
 
         foreach ($_POST as $k => $v) $$k = htmlspecialchars($v);
 
@@ -20,5 +20,5 @@
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
     }
-    header('Location: post.php?post='.$post);
+    header('Location: ../post.php?post='.$post);
 ?>

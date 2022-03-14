@@ -16,13 +16,13 @@
     ?>
     <head>
         <meta charset="UTF-8">
-        <title>répondre - Forum d'entraide</title>
+        <title>Répondre - ForHelp</title>
         <link href="styles/style.css" rel="stylesheet"/>
         <link href="styles/writeanswer.css" rel="stylesheet"/>
     </head>
     <body>
         <?php include 'data/navbar.php'; ?>
-        <main>
+        <div class="page"><main>
             <div id="post">
                 <div id="arbo">
                     <?php echo getCategoryArbo($connexion,$post["categoryid"]); ?>
@@ -34,12 +34,15 @@
                     <?php echo $post["text"] ?>
                 </p>
             </div>
-            <form action="sendanswer.php?post=<?php echo $postid; ?>" method="POST" id="form">
+            <form action="actions/sendanswer.php?post=<?php echo $postid; ?>" method="POST" id="form">
                 <textarea id="text" name="text" required placeholder="Votre réponse"></textarea>
                 <div class="right">
                     <button type="submit" id="submit" name="post">Poster</button>
                 </div>
             </form>
-        </main>
+        </main></div>
+        <footer>
+            <?php include "data/footer.php"; ?>
+        </footer> 
     </body>
 </html>

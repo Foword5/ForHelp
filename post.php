@@ -13,19 +13,22 @@
             $post = getPost($connexion,$postid);
             if (!$post) header("Location:unknow.php");
 
-            $autor = getUser($connexion,$post["userid"]);            
+            $author = getUser($connexion,$post["userid"]);            
         }else header("Location:unknow.php"); 
+        if(session_status() != PHP_SESSION_ACTIVE){
+            session_start();
+        }
     ?>
     <head>
         <meta charset="UTF-8">
-        <title>ForHelp - <?php echo $post["title"]; ?></title>
+        <title><?php echo $post["title"]; ?> - ForHelp</title>
         <link href="styles/style.css" rel="stylesheet"/>
         
         <link href="styles/post.css" rel="stylesheet"/>
     </head>
     <body>
         <?php include "data/navbar.php"; ?>
-        <main>
+        <div class="page"><main>
             <div id="post">
                 <div id="arbo">
                     <?php echo getCategoryArbo($connexion,$post["categoryid"]); ?>
@@ -38,8 +41,13 @@
                 </p>
                 <table id="post_bot">
                     <tr>
-                        <td><?php echo "<u><a href='./account.php?user=".$autor["userid"]."'>" ?><?php echo $autor["username"]; ?></a></u></td>
-                        <td class="table_right"><a href="writeanswer.php?post=<?php echo $postid;?>"><button>Écrire une réponse</button></a></td>
+                        <td><?php echo printProfile($connexion,$author["userid"])?></td>
+                        <td class="table_right"><a href="writeanswer.php?post=<?php echo $postid;?>"><button>Écrire une réponse</button></a>
+                        <?php
+                            if(isset($_SESSION["connected"]) && getPost($connexion,$postid)["userid"] == $_SESSION["connected"])
+                                echo "<a href='confirm_delete.php?post=".$postid."&url=".$_SERVER['REQUEST_URI']."'><button class='red_button'>Supprimer</button></a>";
+                        ?>
+                        </td>
                     </tr>
                 </table>
             </div>
@@ -56,33 +64,30 @@
                 mysqli_stmt_close($stmt);
 
                 foreach($result as $answer){
-                    if($answer["isgood"] == 1){
-                        echo "
-                            <div class='answer'>
-                                <div class='answer_top'>
-                                    <img src='data/img/check.png' alt='Good answer' class='check_img' title='Réponse validé par l'auteur'>
-                                        <u><a href='./account.php?user=".$answer["userid"]."'>".getUser($connexion,$answer["userid"])["username"]."</a></u>
-                                </div>
-                                <div class='answer_text'>
-                                    ".$answer["text"]."
-                                </div>
+                    echo "
+                        <div class='answer'>
+                            <div class='answer_top'>
+                                ".printProfile($connexion,$answer["userid"]);
+                                if($answer["isgood"] == 1) echo"<img src='data/img/check.png' alt='Good answer' class='check_img' title='Réponse validé par l'auteur'>";
+                                if(isset($_SESSION["connected"]) && $answer["userid"] == $_SESSION["connected"])
+                                    echo"<a href='confirm_delete.php?answer=".$answer["answerid"]."&url=".$_SERVER['REQUEST_URI']."'><button>Supprimer</button></a>";
+                                if(isset($_SESSION["connected"]) && $author["userid"] == $_SESSION["connected"] && $answer["isgood"]==0)
+                                    echo"<a href='actions/action_good_answer.php?good=true&answer=".$answer["answerid"]."&url=".$_SERVER['REQUEST_URI']."'><button class='reponse_button green_button'>Valider la réponse</button></a>";
+                                if(isset($_SESSION["connected"]) && $author["userid"] == $_SESSION["connected"] && $answer["isgood"]==1)
+                                    echo"<a href='actions/action_good_answer.php?good=false&answer=".$answer["answerid"]."&url=".$_SERVER['REQUEST_URI']."'><button class='reponse_button red_button'>Retirer la validation</button></a>";
+                                echo 
+                            "</div>
+                            <div class='answer_text'>
+                                ".$answer["text"]."
                             </div>
-                            ";
-                    }else{
-                        echo "
-                            <div class='answer'>
-                                <div class='answer_top'>
-                                    <u><a href='./account.php?user=".$answer["userid"]."'>".getUser($connexion,$answer["userid"])["username"]."</a></u>
-                                </div>
-                                <div class='answer_text'>
-                                    ".$answer["text"]."
-                                </div>
-                            </div>
-                            ";
-                    }
+                        </div>
+                        ";
                 }
             ?>
-        </main>
+        </main></div>
+        <footer>
+            <?php include "data/footer.php"; ?>
+        </footer> 
     </body>
     <?php
         mysqli_close($connexion);

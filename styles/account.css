@@ -1,17 +1,73 @@
-profile-image{
-    float: left;
-    width: 140px;
-    height: 250px;
+#profile-image-image {
+    width: 200px;
+    height: 200px;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
-.modif-email{
-    float: right;
+.posts{
+    border: 2px solid black;
+    margin: 0 0 15px 0;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.hide {
-    display: none;
-  }
-  
-.show {
-display: block;
+main{
+    padding: 25px 50px 15px 50px;
+    box-sizing: border-box;
 }
+
+.posts h3 {
+    margin: 0;
+    font-size: 30px;
+}
+
+.posts span {
+    font-size: 15px;
+    margin: 0 0 5px 0;
+}
+
+.button_post{
+    display: flex;
+    justify-content: right;
+}
+
+.button_post button{
+    display: inline-block;
+    white-space:nowrap;
+    margin: 0 5px 0 5px;
+}
+
+#user-info-overhaul{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.button-modif{
+    display: flex;
+    text-align: end;
+    flex-direction: column;
+}
+
+.button-modif button {
+    margin-bottom: 5px;
+}
+
+.user-info2 h3{
+    margin: 0;
+    font-size: 50px;
+}
+
+#user-info1 {
+    display: flex;
+    align-items: center;
+}
+
+.user-info2{
+    height: 100%;
+    margin-left: 10px;
+}
+

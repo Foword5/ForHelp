@@ -1,5 +1,5 @@
 <?php
-      include "data/db_login.php";
+      include "../data/db_login.php";
       $connexion=mysqli_connect($host,$login,$mdp,$bdd) or die("connexion impossible");
       if(session_status() != PHP_SESSION_ACTIVE){
           session_start();
@@ -23,22 +23,22 @@
 
         if ($data_pass == $password){
           if ($newmail == $cnewmail) {
-            $update_req = "UPDATE users SET email = '$newmail' WHERE userid=?";
+            $update_req = "UPDATE users SET email = ? WHERE userid=?";
             $stmt = mysqli_prepare($connexion, $update_req);
-            mysqli_stmt_bind_param($stmt, "i", $_SESSION["connected"]);// le type de ce que tu met (i pour int), puis la variable a associer
+            mysqli_stmt_bind_param($stmt, "si",htmlspecialchars($newmail), $_SESSION["connected"]);// le type de ce que tu met (i pour int), puis la variable a associer
             mysqli_stmt_execute($stmt);
             $result = mysqli_stmt_get_result($stmt);//tu obtiens une liste de liste
             mysqli_stmt_close($stmt);
 
-            header('Location: index.php?succes=mailsucces');
+            header('Location: ../index.php?succes=mailsucces');
           }
           else {
-            header('Location: modif-mail.php?error=dontmatch');
+            header('Location: ../modif-mail.php?error=dontmatch');
           }
         }
 
         else {
-          header('Location: modif-mail.php?error=mauvaispass');
+          header('Location: ../modif-mail.php?error=mauvaispass');
         }
       }
  ?>

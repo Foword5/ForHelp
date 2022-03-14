@@ -96,11 +96,12 @@ INSERT INTO projet.categories(name,description) VALUES ("Langue","Toutes les lan
 
 -- projet.users
 
-INSERT INTO projet.users(username,email,password,points,isteacher) VALUES("Foword","foword@gmail.com","123456",6,1);
-INSERT INTO projet.users(username,email,password,points,isteacher) VALUES("Minh Duc","mduc@gmail.com","123456",5,1);
-INSERT INTO projet.users(username,email,password,points) VALUES("Galla","galla@gmail.com","123456",4);
-INSERT INTO projet.users(username,email,password,points) VALUES("Luckar","luckar@gmail.com","123456",3);
-INSERT INTO projet.users(username,email,password,points) VALUES("Aélar","thesuperaelar@gmail.com","123456",2);
+-- les password sont '123456'
+INSERT INTO projet.users(username,email,password,points,isteacher) VALUES("Foword","foword@gmail.com","e10adc3949ba59abbe56e057f20f883e",6,1);
+INSERT INTO projet.users(username,email,password,points,isteacher) VALUES("Minh Duc","mduc@gmail.com","e10adc3949ba59abbe56e057f20f883e",5,1);
+INSERT INTO projet.users(username,email,password,points) VALUES("Galla","galla@gmail.com","e10adc3949ba59abbe56e057f20f883e",4);
+INSERT INTO projet.users(username,email,password,points) VALUES("Luckar","luckar@gmail.com","e10adc3949ba59abbe56e057f20f883e",3);
+INSERT INTO projet.users(username,email,password,points) VALUES("Aélar","thesuperaelar@gmail.com","e10adc3949ba59abbe56e057f20f883e",2);
 
 -- projet.posts
 

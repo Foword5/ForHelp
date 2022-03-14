@@ -2,17 +2,18 @@
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title>Inscription - Forum d'entraide</title>
+        <title>Inscription - Forhelp</title>
         <link href="styles/style.css" rel="stylesheet"/>
         <link href="styles/inscription.css" rel="stylesheet"/>
     </head>
     <body>
         <?php include "data/navbar.php";?>
-        <main>
+        <div class="page"><main>
+            <h1>Inscription</h1>
             <?php
                 if (isset($_GET['succes'])) {
                     if ($_GET["succes"] == "deletesucces") {
-                        echo "<p style='color:green;'>Supprimé le compte avec succès</p>";
+                        echo "<p style='color:green;'>Compte supprimé avec succès</p>";
                     }
                 }
 
@@ -27,46 +28,60 @@
                         echo "<p style='color:red;'>Votre mot de passe doit faire 5 caractères minimum</p>";
                     }else if($_GET["error"] == "emailexist"){
                         echo "<p style='color:red;'>L'adresse email est déjà enregistré</p>";
+                    }else if($_GET["error"] == "nocaptcha"){
+                        echo "<p style='color:red;'>Erreur avec le captcha</p>";
                     }
                 }
             ?>
-            <table>
-                <form action="inscriptionaction.php" method="POST"  autocomplete="off">
+            <table role="presentation">
+                <form action="actions/inscriptionaction.php" method="POST"  autocomplete="off">
                     <tr>
                         <td>
-                            <label> Nom d'utilisateur </label>
+                            <label for="inscr_form_username"> Nom d'utilisateur </label>
                         </td>
                         <td>
-                            <input type="text" name="username" required />
+                            <input id="inscr_form_username" type="text" name="username" required title="4 caractères minimum"/>
                         </td>
                     </tr><tr>
                         <td>
-                            <label>Adresse mail</label>
+                            <label for="inscr_form_mail">Adresse mail</label>
                         </td>
                         <td>
-                            <input type="email" name="mail" required />
+                            <input id="inscr_form_mail" type="email" name="mail" required />
                         </td>
                     </tr><tr id="mdp">
                         <td>
-                            <label>Mot de passe</label>
+                            <label for="inscr_form_passwd">Mot de passe</label>
                         </td>
                         <td>
-                            <input type="password" name="password" required />
+                            <input id="inscr_form_passwd" type="password" name="password" required title="5 caractères minimum"/>
                         </td>
                     </tr><tr>
                         <td>
-                            <label>Confirmer le mot de passe</label>
+                            <label for="inscr_form_pwd_confirm">Confirmer le mot de passe</label>
                         </td>
                         <td>
-                            <input type="password" name="password_confirm" required />
+                            <input id="inscr_form_pwd_confirm" type="password" name="password_confirm" required />
                         </td>
                     </tr><tr>
+                        <input type="hidden" id="recaptchaResponse" name="recaptcha-response">
                         <td colspan="2" id="submit">
                             <input type="submit" name="enter" value="S'inscrire">
                         </td>
                     </tr>
                 </form>
             </table>
-        </main>
+        </main></div>
+        <footer>
+            <?php include 'data/footer.php';?>
+        </footer>
+        <script src="https://www.google.com/recaptcha/api.js?render=6LewrdkeAAAAAFl4ZTmyaHgNuT0dwvNGCmrUvfsi"></script>
+        <script>
+            grecaptcha.ready(function() {
+                grecaptcha.execute('6LewrdkeAAAAAFl4ZTmyaHgNuT0dwvNGCmrUvfsi', {action: 'homepage'}).then(function(token) {
+                    document.getElementById('recaptchaResponse').value = token
+                });
+            });
+        </script>
     </body>
 </html>

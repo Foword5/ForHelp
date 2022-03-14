@@ -2,13 +2,13 @@
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title>Connexion - Forum d'entraide</title>
+        <title>Connexion - Forhelp</title>
         <link href="styles/style.css" rel="stylesheet"/>
         <link href="styles/connection.css" rel="stylesheet"/>
     </head>
     <body>
         <?php include "data/navbar.php"; ?>
-        <main>
+        <div class="page"><main>
             <?php
             require "data/db_login.php";
 
@@ -41,14 +41,11 @@
                     echo "<p style='color:red;'>Veuillez vous connecter</p>";
                     //Par exemple essayer de revenir en arrière sur une page ou il faut s'être déconnecté
                 }
-                elseif ($id=="logout"){
-                    echo "<p style='color:red;'>Au revoir</p>";
-                }
             }
             
             ?>
 
-            <form action='connection_check.php' method='post'>
+            <form action='actions/connection_check.php' method='post'>
                 <table>
                     <tr>
                         <td>Adresse Mail</td>
@@ -61,6 +58,9 @@
                     </tr>
                 </table>
             </form>
-        </main>
+        </main></div>
+        <footer>
+            <?php include "data/footer.php"; ?>
+        </footer> 
     </body>
 </html>
