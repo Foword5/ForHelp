@@ -35,10 +35,6 @@
                 margin: 0;
             }
 
-            input, textarea{
-                accent-color: #6667ab;
-            }
-
             button, input[type="submit"] {
                 border-radius: 5px;
                 height: 40px;
