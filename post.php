@@ -24,7 +24,7 @@
         <meta charset="UTF-8">
         <title><?php echo $post["title"]; ?> - ForHelp</title>
         <link href="styles/style.css" rel="stylesheet"/>
-        
+        <link rel="icon" type="image/png" href="data/img/logo.png" />
         <link href="styles/post.css" rel="stylesheet"/>
     </head>
     <body>

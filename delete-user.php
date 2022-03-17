@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>Supprimer votre compte - ForHelp</title>
         <link href="styles/style.css" rel="stylesheet"/>
+        <link rel="icon" type="image/png" href="data/img/logo.png" />
         <link href="styles/modifinfo.css" rel="stylesheet"/>
     </head>
     <body>

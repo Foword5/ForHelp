@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Page not found - Forehelp</title>
+        <link rel="icon" type="image/png" href="data/img/logo.png" />
     </head>
     <body>
         <?php include "data/navbar.php";?>
