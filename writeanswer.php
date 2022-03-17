@@ -21,7 +21,8 @@
         <link href="styles/writeanswer.css" rel="stylesheet"/>
     </head>
     <body>
-        <?php include 'data/navbar.php'; ?>
+        <?php include 'data/navbar.php'; 
+            include 'session_check.php'?>
         <div class="page"><main>
             <div id="post">
                 <div id="arbo">

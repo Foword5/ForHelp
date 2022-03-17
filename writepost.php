@@ -18,6 +18,7 @@
                 }
             ?>
             <div id="title">Poser une question</div>
+            <div id="subtitle">Utilisez [ <span class="highlight">```</span> ] pour ajouter du markdown</div>
             <form action="actions/sendpost.php" method="POST" class="post-form">
                 <table>
                     <tr>

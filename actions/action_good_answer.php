@@ -11,11 +11,13 @@
             $result = mysqli_stmt_get_result($stmt);
             mysqli_stmt_close($stmt);
 
-            $result = mysqli_fetch_array($result, MYSQLI_ASSOC);
-            if(!$result) header("Location: ".$_GET["url"]);
+            if(mysqli_num_rows($result) == 0){
+                header("Location: ".$_GET["url"]);
+            }
 
             if(session_status() != PHP_SESSION_ACTIVE) session_start();
 
+            $result = mysqli_fetch_array($result, MYSQLI_ASSOC);
             if($result["userid"] == $_SESSION["connected"]){
                 $bd_get = "SELECT userid FROM answers WHERE answerid = ?";
                 $stmt = mysqli_prepare($connexion, $bd_get);
@@ -24,8 +26,9 @@
                 $result = mysqli_stmt_get_result($stmt);
                 mysqli_stmt_close($stmt);
 
-                $result = mysqli_fetch_array($result, MYSQLI_ASSOC);
-                if(!$result) header("Location: ".$_GET["url"]);
+                if(mysqli_num_rows($result) == 0){
+                    header("Location: ".$_GET["url"]);
+                }
                 
                 if($_GET["good"] == "true"){
                     $setgood = "UPDATE answers SET isgood = 1 WHERE answerid = ?";

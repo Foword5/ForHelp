@@ -5,6 +5,7 @@
             <title>Rechercher - ForHelp</title>
             <link href="styles/style.css" rel="stylesheet"/>
             <link href="styles/index.css" rel="stylesheet"/>
+            <link rel="icon" type="image/png" href="data/img/logo.png" />
             <script src="data/script/index_script.js"></script>
     </head>
     <body>
@@ -127,13 +128,16 @@
                         $answerResult = mysqli_fetch_array($answerResult, MYSQLI_ASSOC);
                         if($answerResult) $anwser = $answerResult["nbr"];
 
+                        $text = explode("```",$ligne['text']);
+
                         echo " <div class='index'>
                                 <div class='arbo'>" .getCategoryArbo($connexion, $ligne["categoryid"]). "</div>
                                 <h3>" .$ligne['title']. "</h3>";
-                        if(strlen($ligne["text"])>=200){
-                            echo "<p>" .substr($ligne['text'],0,200). "...</p>";
+                        if(strlen($text[0])>=200){
+                            echo "<p>" .substr($text[0],0,200). "...</p>";
                         }else{
-                            echo "<p>" .$ligne['text']. "</p>";
+                            if(isset($text[1])) $text[0] .= "... [code]";
+                            echo "<p>" .$text[0]. "</p>";
                         }
                         echo "
                             <div class='index_bottom'>

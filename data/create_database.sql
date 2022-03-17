@@ -57,6 +57,15 @@ create table IF NOT EXISTS projet.follow (
     PRIMARY KEY (userid,categoryid)
 );
 
+create user db_user IDENTIFIED BY  "super_cool_bd_user";
+
+grant select, update, insert, delete on projet.answers to db_user;
+grant select, update, insert, delete on projet.categories to db_user;
+grant select, update, insert, delete on projet.edits to db_user;
+grant select, update, insert, delete on projet.follow to db_user;
+grant select, update, insert, delete on projet.posts to db_user;
+grant select, update, insert, delete on projet.users to db_user;
+
 -- ---Insertion for example and tests
 DELETE FROM projet.categories;
 ALTER TABLE projet.categories AUTO_INCREMENT = 1;

@@ -34,3 +34,8 @@ table{
     justify-content: space-between;
     align-items: center;
 }
+
+#subtitle{
+    text-align: center;
+    font-size: 15px;
+}

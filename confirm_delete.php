@@ -12,7 +12,7 @@
         <div class="page"><main>
             <?php
                 if((!isset($_GET["post"]) && !isset($_GET["answer"])) || !isset($_GET["url"])){
-                    header("Location : index.php");
+                    header("Location: index.php");
                 }
             ?>
             <div class="center">

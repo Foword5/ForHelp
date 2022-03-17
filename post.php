@@ -11,7 +11,8 @@
             or die("connexion impossible");
           
             $post = getPost($connexion,$postid);
-            if (!$post) header("Location:unknow.php");
+            if (!$post && !isset($GET["noredirect"])) header("Location:unknow.php");
+            else if(!$post) header("Location:index.php");
 
             $author = getUser($connexion,$post["userid"]);            
         }else header("Location:unknow.php"); 
@@ -36,9 +37,28 @@
                 <h3>
                     <?php echo $post["title"] ?>
                 </h3>
-                <p>
-                    <?php echo $post["text"] ?>
-                </p>
+                <div id="post_container">
+                    <p class="post">
+                        <?php 
+                            $text = nl2br($post["text"]);
+
+                            $i=0;
+
+                            while(str_contains($text,"```")){
+                                if($i%2 == 0){
+                                    $search = '/'.preg_quote("```", '/').'/';
+                                    $text = preg_replace($search, "</p><p class='markdown'>", $text, 1);
+                                }else{
+                                    $search = '/'.preg_quote("```", '/').'/';
+                                    $text = preg_replace($search, "</p><p class='post'>", $text, 1);
+                                }
+                                $i++;
+                            }
+
+                            echo $text;
+                        ?>
+                    </p>
+                </div>
                 <table id="post_bot">
                     <tr>
                         <td><?php echo printProfile($connexion,$author["userid"])?></td>
