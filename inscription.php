@@ -5,6 +5,7 @@
         <title>Inscription - Forhelp</title>
         <link href="styles/style.css" rel="stylesheet"/>
         <link href="styles/inscription.css" rel="stylesheet"/>
+        <link rel="icon" type="image/png" href="data/img/logo.png" />
     </head>
     <body>
         <?php include "data/navbar.php";?>

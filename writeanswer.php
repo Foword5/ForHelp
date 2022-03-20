@@ -19,9 +19,11 @@
         <title>Répondre - ForHelp</title>
         <link href="styles/style.css" rel="stylesheet"/>
         <link href="styles/writeanswer.css" rel="stylesheet"/>
+        <link rel="icon" type="image/png" href="data/img/logo.png" />
     </head>
     <body>
-        <?php include 'data/navbar.php'; ?>
+        <?php include 'data/navbar.php'; 
+            include 'session_check.php'?>
         <div class="page"><main>
             <div id="post">
                 <div id="arbo">

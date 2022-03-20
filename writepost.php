@@ -5,6 +5,7 @@
         <title>Nouvelle question - ForHelp</title>
         <link href="styles/style.css" rel="stylesheet"/>
         <link href="styles/writepost.css" rel="stylesheet"/>
+        <link rel="icon" type="image/png" href="data/img/logo.png" />
     </head>
     <body>
         <?php include 'data/navbar.php'; 
@@ -18,6 +19,7 @@
                 }
             ?>
             <div id="title">Poser une question</div>
+            <div id="subtitle">Utilisez [ <span class="highlight">```</span> ] pour ajouter du markdown</div>
             <form action="actions/sendpost.php" method="POST" class="post-form">
                 <table>
                     <tr>

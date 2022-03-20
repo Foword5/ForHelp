@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Page not found - Forehelp</title>
+        <link rel="icon" type="image/png" href="data/img/logo.png" />
     </head>
     <body>
         <?php include "data/navbar.php";?>
@@ -32,10 +33,6 @@
             body {
                 background-color: #DDD;
                 margin: 0;
-            }
-
-            input, textarea{
-                accent-color: #6667ab;
             }
 
             button, input[type="submit"] {

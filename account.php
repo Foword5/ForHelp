@@ -16,6 +16,7 @@
         <title><?php echo $user["username"]?> - Forhelp</title>
         <link href="styles/style.css" rel="stylesheet"/>
         <link href="styles/account.css" rel="stylesheet"/>
+        <link rel="icon" type="image/png" href="data/img/logo.png" />
 
     </head>
     <body>

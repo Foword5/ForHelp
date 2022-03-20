@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>Confirmer - ForHelp</title>
         <link href="styles/style.css" rel="stylesheet"/>
+        <link rel="icon" type="image/png" href="data/img/logo.png" />
     </head>
     <body>
         <?php
@@ -12,7 +13,7 @@
         <div class="page"><main>
             <?php
                 if((!isset($_GET["post"]) && !isset($_GET["answer"])) || !isset($_GET["url"])){
-                    header("Location : index.php");
+                    header("Location: index.php");
                 }
             ?>
             <div class="center">

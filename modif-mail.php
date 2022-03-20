@@ -5,6 +5,7 @@
       <title>Modifier votre email - ForHelp</title>
       <link href="styles/style.css" rel="stylesheet"/>
       <link href="styles/modifinfo.css" rel="stylesheet"/>
+        <link rel="icon" type="image/png" href="data/img/logo.png" />
   </head>
     <body>
     <?php

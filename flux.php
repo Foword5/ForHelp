@@ -6,6 +6,7 @@
         <link href="styles/style.css" rel="stylesheet"/>
         <link href="styles/flux.css" rel="stylesheet"/>
         <script src="data/script/flux_script.js"></script>
+        <link rel="icon" type="image/png" href="data/img/logo.png" />
     </head>
     <body>
         <?php include "data/navbar.php"; 
