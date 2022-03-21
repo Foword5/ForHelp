@@ -2,7 +2,7 @@
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title>Modifier votre username - ForHelp</title>
+        <title>Modifier votre photo de profile - ForHelp</title>
         <link href="styles/style.css" rel="stylesheet"/>
         <link href="styles/modifinfo.css" rel="stylesheet"/>
         <link rel="icon" type="image/png" href="data/img/logo.png" />
