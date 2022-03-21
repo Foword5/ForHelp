@@ -178,11 +178,11 @@ img {
 
 .link{
     color: black;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .link:hover{
-    text-decoration: underline;
+    color: #6667ab;
 }
 
 .colored{
