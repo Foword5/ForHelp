@@ -1,3 +1,12 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro);
+
+textarea {
+    width: calc(100% - 10px);
+    height: 300px;
+    resize: none;
+    margin: 15px 0 15px 0 ;
+}
+
 #post {
     border: 2px solid black;
 }
@@ -15,12 +24,16 @@ h3 {
     text-decoration-thickness: 2px;
 }
 
-#post p{
-    margin: 10px;
+#post .post{
+    margin: 0;
+}
+
+#post .markdown{
+    margin: 10px 0 10px 0;
     border: 2px solid #999;
     background-color: #DDD;
-    padding: 15px;
-    border-radius :4px;
+    padding: 5px;
+    font-family: 'Source Code Pro', sans-serif;
 }
 
 #post_bot {
@@ -32,13 +45,11 @@ h3 {
     font-size: 25px;
 }
 
-.right {
-    text-align: right;
+#post_container {
+    padding: 10px;
+    margin: 10px
 }
 
-textarea {
-    width: calc(100% - 10px);
-    height: 350px;
-    resize: none;
-    margin: 15px 0 15px 0 ;
+.right{
+    text-align: right;
 }
