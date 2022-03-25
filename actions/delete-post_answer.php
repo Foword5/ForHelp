@@ -38,9 +38,8 @@
             $result = mysqli_stmt_get_result($stmt);
             mysqli_stmt_close($stmt);
 
-            if(mysqli_num_rows($result) == 0){
-                header("Location: ".$_GET["url"]);
-            }
+            if(mysqli_num_rows($result) == 0) header("Location: ".$_GET["url"]);
+            else $result = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
             if(session_status() != PHP_SESSION_ACTIVE){
                 session_start();
@@ -53,6 +52,7 @@
                 $result = mysqli_stmt_get_result($stmt);
                 mysqli_stmt_close($stmt);
             }
+            header("Location: ".$_GET["url"]);
         }else{
             header("Location: ".$_GET["url"]);
         }
