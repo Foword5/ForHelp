@@ -43,6 +43,8 @@
                 $stmt = mysqli_prepare($connexion, $setgood);
                 mysqli_stmt_bind_param($stmt, "i", $_GET["answer"]);
                 mysqli_stmt_execute($stmt);
+                
+                $result = mysqli_fetch_array($result, MYSQLI_ASSOC);
                 if($result["userid"] != $_SESSION["connected"]){
                     $stmt = mysqli_prepare($connexion, $addpoint);
                     mysqli_stmt_bind_param($stmt, "i", $result["userid"]);
